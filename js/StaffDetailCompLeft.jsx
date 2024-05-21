@@ -59,7 +59,7 @@ const StaffDetailCompLeft = ({ staff }) => {
         </div>
 
         <div id="back_btn" className="text_color">
-          <a href="/Mitarbeitende">ZURÜCK</a>
+          <a href="/#/Mitarbeitende">ZURÜCK</a>
         </div>
       </div>
       <br />
