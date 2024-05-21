@@ -12,20 +12,20 @@ import { useState } from "react";
 import { projectIdFetching } from "./helpers";
 import Spinner from "./Spinner";
 
-const btn_active = {
-  background: "#C00000",
-  color: "#fff",
-  textdecoration: "none",
-  textTransform: "uppercase",
-  FontWeight: "600",
-  boxShadow: "none",
-};
-const btn_inactive = {
-  background: "#ffffff",
-  color: "#000000",
-  boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 4px",
-  FontWeight: "500",
-};
+// const btn_active = {
+//   background: "#C00000",
+//   color: "#fff",
+//   textdecoration: "none",
+//   textTransform: "uppercase",
+//   FontWeight: "600",
+//   boxShadow: "none",
+// };
+// const btn_inactive = {
+//   background: "#ffffff",
+//   color: "#000000",
+//   boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 4px",
+//   FontWeight: "500",
+// };
 
 const Services = () => {
   // const param = useParams();
