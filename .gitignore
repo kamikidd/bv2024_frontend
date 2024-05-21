@@ -1,0 +1,8 @@
+ node_modules/
+ dist/
+ .env
+ .Ds_Store
+ coverage/
+ .vscode/
+ dist/assets/
+node_modules

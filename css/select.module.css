@@ -1,0 +1,153 @@
+.container {
+    position: relative;
+    display: flex;
+    font-family: 'Barlow Condensed', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    width: 390px;
+    min-height: 47px;
+    outline: none;
+    align-items: center;
+    padding-left: 20px;
+    gap: 5px;
+
+}
+
+.container:focus {
+    border-color: hsl(19, 93%, 43%);
+}
+
+.container.red {
+    background-color: rgb(192, 0, 0, 0.75);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: white;
+    padding-right: 20px;
+
+}
+
+.container.white {
+    padding-right: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.9px;
+    color: #c00000;
+}
+
+.value {
+    flex-grow: 1;
+}
+
+.clearbtn {
+    background: none;
+    color: #c00000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 55px;
+    line-height: 47px;
+    display: none;
+    z-index: 99;
+    padding-right: 22px;
+}
+
+.clearbtn.show {
+    display: block;
+
+}
+
+.clearbtn:focus,
+.clearbtn:hover {
+    color: #333;
+
+}
+
+
+.arrow {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: none;
+    padding: 8px;
+
+}
+
+/* .arrow.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.arrow.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+} */
+.arrow.show {
+    display: inline-block;
+}
+
+.arrow.up {
+    transition: transform 0.5s;
+    transform: rotate(-135deg);
+    -webkit-transform: translateY(5px) rotate(-135deg);
+}
+
+.arrow.down {
+    transition: transform 0.8s;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+
+.options {
+    position: absolute;
+
+    /* min-width: max-content; */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 0;
+    border: 0.01em transparent rgb(192, 0, 0, 0.75);
+    color: black;
+    width: 100%;
+    left: 0;
+    top: calc(100%);
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    transition: max-height 0.4s;
+    overflow: hidden;
+
+    /* display: none; */
+    /* max-height: 30em; */
+    /* overflow-y: hidden; */
+}
+
+
+.options.show {
+    /* display: block; */
+    max-height: 30em;
+}
+
+.option {
+    padding: 0.25em .5em;
+    cursor: pointer;
+    border: 1px rgb(192, 0, 0, 0.8);
+    border-style: groove;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.9px;
+    color: #000000;
+
+
+}
+
+.option.selected {
+    background-color: #e5bdbd;
+
+}
+
+.option.highlighted {
+    background-color: #f1dfdf;
+    color: #c00000;
+}
