@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import DownloadPDF from "./DownloadPDF";
 
 const ProjectDetail = () => {
@@ -19,7 +19,7 @@ const ProjectDetail = () => {
         <Row>
           <Col xl={4}>
             <div id="back_btn_projectdetail" className="text_color">
-              <a href="/Projekte">ZURÜCK</a>
+              <Link to="/Projekte">ZURÜCK</Link>
             </div>
           </Col>
 

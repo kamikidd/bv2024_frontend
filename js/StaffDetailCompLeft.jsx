@@ -34,7 +34,7 @@ const StaffDetailCompLeft = ({ staff }) => {
               className="symbols_small"
             /> */}
               {/* todo  */}
-              <a href={"/"}>{staff.acf.email} </a>
+              <Link to="/">{staff.acf.email} </Link>
             </div>
             <div className="text_color staff_info_position ">
               {/* <img
@@ -61,7 +61,7 @@ const StaffDetailCompLeft = ({ staff }) => {
         </div>
 
         <div id="back_btn" className="text_color">
-          <Link to="/#/Mitarbeitende">ZURÜCK</Link>
+          <Link to="/Mitarbeitende">ZURÜCK</Link>
         </div>
       </div>
       <br />
