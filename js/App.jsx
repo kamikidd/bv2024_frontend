@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./Home";
 import Services from "./Services";
@@ -25,7 +25,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter basename="/">
+      <HashRouter>
         <QueryClientProvider client={queryClient}>
           <Header></Header>
           <Routes forceRefresh>
@@ -45,7 +45,7 @@ const App = () => {
           </Routes>
           <Footer></Footer>
         </QueryClientProvider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
