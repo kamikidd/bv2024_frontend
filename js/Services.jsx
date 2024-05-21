@@ -7,7 +7,7 @@ import SelectedProject4ServicePage from "./SelectedProject4ServicePage";
 import ShowServiceInfo from "./ShowServiceInfo";
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "./fetchData";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { projectIdFetching } from "./helpers";
 import Spinner from "./Spinner";
@@ -28,7 +28,7 @@ const btn_inactive = {
 };
 
 const Services = () => {
-  const param = useParams();
+  // const param = useParams();
   const location = useLocation();
   const servicename = location.state;
   console.log(servicename);
