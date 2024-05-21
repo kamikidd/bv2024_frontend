@@ -3,5 +3,4 @@
  .Ds_Store
  coverage/
  .vscode/
- dist/
 node_modules
