@@ -47,7 +47,7 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul id="navbtn" className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink
+                  <Link
                     reloadDocument
                     activeclassname="active"
                     className="nav-link"
@@ -55,7 +55,7 @@ const Header = () => {
                     to="/Dienstleistungen"
                   >
                     Dienstleistungen
-                  </NavLink>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <NavLink
