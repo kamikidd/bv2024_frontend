@@ -43,7 +43,7 @@ const Home = () => {
               className="home-service-box"
               key={service.id}
             >
-              <Link to={`/Dienstleistungen`} state={service.title.rendered}>
+              <Link to="/Dienstleistungen" state={service.title.rendered}>
                 {/* <Link to={`/Dienstleistungen/${service.title.rendered}`}> */}
                 <ServicePicComp
                   images={service.acf.pic_url}
@@ -60,7 +60,7 @@ const Home = () => {
       </Container>
 
       <Container>
-        <Link to={`/Projekte/laufend`} id="currentProjects">
+        <Link to="/Projekte/laufend" id="currentProjects">
           <span>
             Laufende Projekte
             <img src={symbol_goto} alt="Laufende Projekte" height="24px"></img>
