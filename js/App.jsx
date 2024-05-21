@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./Home";
 import Services from "./Services";
@@ -25,27 +25,35 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
-        <QueryClientProvider client={queryClient}>
-          <Header></Header>
-          <Routes forceRefresh>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/Dienstleistungen" element={<Services />}></Route>
-            <Route path="/Dienstleistungen/:id" element={<Services />}></Route>
-            <Route path="/Mitarbeitende" element={<Staffs />}></Route>
-            <Route path="/Mitarbeitende/:id" element={<StaffDetail />} />
-            <Route path="/Themen" element={<Topics />}></Route>
-            <Route path="/Projekte" element={<Projects />}></Route>
-            <Route path="/Projekte/:id" element={<Projects />}></Route>
-            <Route path="/Projekt/:title" element={<ProjectDetail />}></Route>
-            <Route path="/Kontakt" element={<Contact />}></Route>
-            <Route path="/Imprint" element={<Imprint />}></Route>
-            <Route path="/DataProtection" element={<DataProtection />}></Route>
-            <Route path="*" element={<NoMatch404 />}></Route>
-          </Routes>
-          <Footer></Footer>
-        </QueryClientProvider>
-      </BrowserRouter>
+      <HashRouter>
+        <BrowserRouter>
+          <QueryClientProvider client={queryClient}>
+            <Header></Header>
+            <Routes forceRefresh>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/Dienstleistungen" element={<Services />}></Route>
+              <Route
+                path="/Dienstleistungen/:id"
+                element={<Services />}
+              ></Route>
+              <Route path="/Mitarbeitende" element={<Staffs />}></Route>
+              <Route path="/Mitarbeitende/:id" element={<StaffDetail />} />
+              <Route path="/Themen" element={<Topics />}></Route>
+              <Route path="/Projekte" element={<Projects />}></Route>
+              <Route path="/Projekte/:id" element={<Projects />}></Route>
+              <Route path="/Projekt/:title" element={<ProjectDetail />}></Route>
+              <Route path="/Kontakt" element={<Contact />}></Route>
+              <Route path="/Imprint" element={<Imprint />}></Route>
+              <Route
+                path="/DataProtection"
+                element={<DataProtection />}
+              ></Route>
+              <Route path="*" element={<NoMatch404 />}></Route>
+            </Routes>
+            <Footer></Footer>
+          </QueryClientProvider>
+        </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
