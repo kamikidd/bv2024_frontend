@@ -1,4 +1,5 @@
 import linkedin_logo from "../imgs/logos/linkedIn_logo_s.png";
+import { Link } from "react-router-dom";
 
 const StaffDetailCompLeft = ({ staff }) => {
   let staffPic = "imgs/staffs/unknown.png";
@@ -60,7 +61,7 @@ const StaffDetailCompLeft = ({ staff }) => {
         </div>
 
         <div id="back_btn" className="text_color">
-          <a href="/#/Mitarbeitende">ZURÜCK</a>
+          <Link href="/#/Mitarbeitende">ZURÜCK</Link>
         </div>
       </div>
       <br />
