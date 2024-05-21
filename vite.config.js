@@ -18,5 +18,5 @@ export default defineConfig({
     host: true,
     port: 8089,
   },
-  base: "/bv2024_frontend/",
+  base: "/",
 });
