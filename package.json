@@ -11,7 +11,7 @@
     "react-router-dom": "^6.4.1",
     "swr": "^2.2.5"
   },
-  "name": "bv2023_frontend",
+  "name": "bv2024_frontend",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
