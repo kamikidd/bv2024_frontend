@@ -25,7 +25,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/bv2024_frontend">
         <QueryClientProvider client={queryClient}>
           <Header></Header>
           <Routes forceRefresh>
