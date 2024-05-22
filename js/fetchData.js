@@ -9,7 +9,8 @@ const fetchData = async ({ queryKey }) => {
   const proto = "http";
   const host = "127.17.0.1";
   const port = "8080";
-  const baseurl = `${proto}://${host}:${port}/wp-json/wp/v2`;
+  // const baseurl = `${proto}://${host}:${port}/wp-json/wp/v2`;
+  const baseurl = "https://bv2024wordpress.42web.io/wp-json/wp/v2";
   // const baseurl1="http://127.17.0.1:8080/wp-json/wp/v2"
   if (taxonomy == "" && data == "projekte") {
     apiRes = await fetch(
