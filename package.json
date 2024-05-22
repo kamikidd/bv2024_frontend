@@ -42,5 +42,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "homepage": "https://kamikidd.github.io/bv2024_frontend"
+  "homepage": "https://kamikidd.github.io/bv2024_frontend",
+  "proxy": "http://kamikidd.github.io/"
+
 }
