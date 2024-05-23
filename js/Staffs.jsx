@@ -68,17 +68,17 @@ const Staffs = () => {
             ) : (
               <Row key={staff.id} className="staff-row">
                 <Col xl={4} key={staff.id} className="staff-box">
-                  <Link
+                  {/* <Link
                     to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                     state={staff}
-                  >
-                    <StaffPicComp
-                      imgid={staff.acf.imgid}
-                      staffName={staff.title.rendered}
-                      position={staff.acf.position}
-                      id={staff.title.rendered}
-                    ></StaffPicComp>
-                  </Link>
+                  > */}
+                  <StaffPicComp
+                    imgid={staff.acf.imgid}
+                    staffName={staff.title.rendered}
+                    position={staff.acf.position}
+                    id={staff.title.rendered}
+                  ></StaffPicComp>
+                  {/* </Link> */}
                 </Col>
                 <Col className="my-auto staff-box">
                   Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
