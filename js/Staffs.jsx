@@ -62,37 +62,33 @@ const Staffs = () => {
       </Container>
       <Container className="categoryTitle">VERWALTUNGSRAT</Container>
       <Container className="staffs-content">
-      {staffs.data.map((staff) => (
-        <Row className="staff-box"
-              key={staff.id}>
-         
-           
-              {staff.title.rendered == "Adrian Vatter" ? (
-                <Link
-                  to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
-                  state={staff.id}
-                >
-                  <StaffPicComp
-                    imgid={staff.acf.imgid}
-                    staffName={staff.title.rendered}
-                    position={staff.acf.position}
-                    id={staff.title.rendered}
-                  ></StaffPicComp>
-                </Link>
-              ) : (
-                ""
-              )}
-          
-          )
+        {staffs.data.map((staff) => (
+          <Row className="staff-box" key={staff.id}>
+            {staff.title.rendered == "Adrian Vatter" ? (
+              <Link
+                to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
+                state={staff.id}
+              >
+                <StaffPicComp
+                  imgid={staff.acf.imgid}
+                  staffName={staff.title.rendered}
+                  position={staff.acf.position}
+                  id={staff.title.rendered}
+                ></StaffPicComp>
+              </Link>
+            ) : (
+              ""
+            )}
 
-          {/* <Col className="staff-box">
+            {/* <Col className="staff-box">
             <StaffPicComp
               imgid={founder_pic}
               staffName={"Adrian Vatter"}
               position={"Präsident des Verwaltungsrats"}
             ></StaffPicComp>
           </Col> */}
-        </Row>)}
+          </Row>
+        ))}
       </Container>
       <br />
       <br />
