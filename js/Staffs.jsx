@@ -64,23 +64,16 @@ const Staffs = () => {
       <Container className="staffs-content">
         <Row className="staff-box">
           {staffs.data.map((staff) => (
-            <div key={staff.id}>
-              {staff.title.rendered == "Adrian Vatter" ? (
-                <Link
-                  to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
-                  state={staff.id}
-                >
-                  <StaffPicComp
-                    imgid={staff.acf.imgid}
-                    staffName={staff.title.rendered}
-                    position={staff.acf.position}
-                    id={staff.title.rendered}
-                  ></StaffPicComp>
-                </Link>
-              ) : (
-                ""
+            <Col key={staff.id}>
+              {staff.title.rendered == "Adrian Vatter" ?? (
+                <StaffPicComp
+                  imgid={staff.acf.imgid}
+                  staffName={staff.title.rendered}
+                  position={staff.acf.position}
+                  id={staff.title.rendered}
+                ></StaffPicComp>
               )}
-            </div>
+            </Col>
           ))}
 
           {/* <Col className="staff-box">
