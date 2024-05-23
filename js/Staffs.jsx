@@ -62,16 +62,11 @@ const Staffs = () => {
       </Container>
       <Container className="categoryTitle">VERWALTUNGSRAT</Container>
       <Container className="staffs-content">
-        <Row>
-          {staffs.data.map((staff) => (
-            <Col
-              // xl={4}
-              // lg={4}
-              // md={6}
-              // sm={12}
-              className="staff-box"
-              key={staff.id}
-            >
+      {staffs.data.map((staff) => (
+        <Row className="staff-box"
+              key={staff.id}>
+         
+           
               {staff.title.rendered == "Adrian Vatter" ? (
                 <Link
                   to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
@@ -87,8 +82,8 @@ const Staffs = () => {
               ) : (
                 ""
               )}
-            </Col>
-          ))}
+          
+          )
 
           {/* <Col className="staff-box">
             <StaffPicComp
@@ -97,7 +92,7 @@ const Staffs = () => {
               position={"Präsident des Verwaltungsrats"}
             ></StaffPicComp>
           </Col> */}
-        </Row>
+        </Row>)}
       </Container>
       <br />
       <br />
