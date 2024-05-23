@@ -13,6 +13,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const services = useQuery(["services", "dienstleistungen", ""], fetchData);
+
   const landing_intro = useQuery(
     ["landingIntro", "pages/28911", ""],
     fetchData
@@ -46,7 +47,7 @@ const Home = () => {
               <Link to="/Dienstleistungen" state={service.title.rendered}>
                 {/* <Link to={`/Dienstleistungen/${service.title.rendered}`}> */}
                 <ServicePicComp
-                  images={service.acf.pic_url}
+                  imgid={service.acf.imgid}
                   picName={service.title.rendered}
                 ></ServicePicComp>
               </Link>

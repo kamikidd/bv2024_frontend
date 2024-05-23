@@ -6,12 +6,14 @@ const fetchData = async ({ queryKey }) => {
   let currentPage = 1;
   let apiRes;
   let posts;
-  const proto = "http";
-  const host = "127.17.0.1";
-  const port = "8080";
+  // const proto = "http";
+  // const host = "127.17.0.1";
+  // const port = "8080";
   // const baseurl = `${proto}://${host}:${port}/wp-json/wp/v2`;
+
   const baseurl = "https://wp-vatter.wadaky.li/wp-json/wp/v2";
   // const baseurl1="http://127.17.0.1:8080/wp-json/wp/v2"
+  //query all projects for Projects page
   if (taxonomy == "" && data == "projekte") {
     apiRes = await fetch(
       `${baseurl}/${data}?per_page=${perPage}&page=${currentPage}`
@@ -32,7 +34,17 @@ const fetchData = async ({ queryKey }) => {
     }
     return allPosts;
   } else if (taxonomy != "") {
-    apiRes = await fetch(`${baseurl}/${data}?per_page=${perPage}&${taxonomy}`);
+    //query projects per topic or other taxonomy
+    if (data == "media") {
+      apiRes = await fetch(
+        `${baseurl}/${data}?per_page=${perPage}/${taxonomy}`
+      );
+    } else {
+      apiRes = await fetch(
+        `${baseurl}/${data}?per_page=${perPage}&${taxonomy}`
+      );
+    }
+
     if (!apiRes.ok) {
       throw new Error(`Data of ${data} fetch not ok`);
     }
