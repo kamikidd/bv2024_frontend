@@ -1,17 +1,12 @@
 import linkedin_logo from "../imgs/logos/linkedIn_logo_s.png";
 import { Link } from "react-router-dom";
 
-const StaffDetailCompLeft = ({ staff }) => {
-  let staffPic = "imgs/staffs/unknown.png";
-
-  if (staff.acf.foto) {
-    staffPic = staff.acf.foto_url;
-  }
+const StaffDetailCompLeft = ({ staff, img }) => {
   const information = staff.acf.otherInfo.split("\r\n");
   return (
     <div>
       <div id="staff_box">
-        <img id="staff_detail_pic" src={staffPic} alt="staff" />
+        <img id="staff_detail_pic" src={img} alt="staff" />
         <div>
           <div id="staff_name" className="staff_info">
             {staff.title.rendered}

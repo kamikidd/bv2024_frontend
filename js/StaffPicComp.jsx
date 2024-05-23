@@ -1,29 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
-import Spinner from "./Spinner";
-import fetchData from "./fetchData";
+import { useFetchMedia } from "./useFetchMedia";
 import unknownstaff_pic from "../imgs/staffs/unknown.png";
 const StaffPicComp = ({ imgid, staffName, position }) => {
-  const navigate = useNavigate();
-  const pic = useQuery(["pic", `media`, `${imgid}`], fetchData);
-  if (pic.isLoading) {
-    return <Spinner></Spinner>;
-  }
-  if (pic.isError) {
-    navigate("/NotMatch404");
-  }
-
-  let staffPic = unknownstaff_pic;
-  let image = pic.data.source_url;
-
-  if (image) {
-    staffPic = image;
-  }
+  const media = useFetchMedia(imgid, unknownstaff_pic);
 
   return (
     <div className="staffPicContainer">
       <div className="staff_pic">
-        <img src={staffPic} alt={staffName}></img>
+        <img src={media} alt={staffName}></img>
         <div className="staff_pic_caption_1">
           <div className="staff_pic_text_1">{staffName}</div>
         </div>

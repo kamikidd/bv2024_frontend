@@ -1,13 +1,12 @@
-const TopicTabComp = ({ images, picName }) => {
-  let topicPic = "imgs/topics/gesundheit.png";
-  if (images) {
-    topicPic = images;
-  }
+import { useFetchMedia } from "./useFetchMedia";
+
+const TopicTabComp = ({ imgid, picName }) => {
+  const media = useFetchMedia(imgid, "imgs/topics/gesundheit.png");
 
   return (
     <div className="topicPicContainer">
       <div className="topic_pic">
-        <img src={topicPic} alt={picName} />
+        <img src={media} alt={picName} />
         <div className="topic_pic_caption">
           <div className="topic_pic_text">{picName}</div>
         </div>

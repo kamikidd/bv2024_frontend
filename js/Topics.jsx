@@ -37,7 +37,7 @@ const Topics = () => {
                 })}`}
               >
                 <TopicTabComp
-                  images={topic.acf.image_url}
+                  imgid={topic.acf.imgid}
                   picName={topic.title.rendered}
                 ></TopicTabComp>
               </Link>
