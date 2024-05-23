@@ -72,21 +72,21 @@ const Staffs = () => {
               className="staff-box"
               key={staff.id}
             >
-              {/* <Link
-                to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
-                state={staff.id}
-              > */}
               {staff.title.rendered == "Adrian Vatter" ? (
-                <StaffPicComp
-                  imgid={staff.acf.imgid}
-                  staffName={staff.title.rendered}
-                  position={staff.acf.position}
-                  id={staff.title.rendered}
-                ></StaffPicComp>
+                <Link
+                  to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
+                  state={staff.id}
+                >
+                  <StaffPicComp
+                    imgid={staff.acf.imgid}
+                    staffName={staff.title.rendered}
+                    position={staff.acf.position}
+                    id={staff.title.rendered}
+                  ></StaffPicComp>
+                </Link>
               ) : (
                 ""
               )}
-              {/* </Link> */}
             </Col>
           ))}
 
