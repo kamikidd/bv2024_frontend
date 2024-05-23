@@ -1,6 +1,6 @@
 import { useFetchMedia } from "./useFetchMedia";
 const ServicePicComp = ({ imgid, picName }) => {
-  const media = useFetchMedia({ imgid }, "imgs/category/forschung.png");
+  const media = useFetchMedia(imgid, "imgs/category/forschung.png");
   // const navigate = useNavigate();
   // const pic = useQuery(["pic", `media`, `${imgid}`], fetchData);
   // if (pic.isLoading) {
