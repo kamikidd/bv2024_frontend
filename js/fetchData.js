@@ -36,9 +36,7 @@ const fetchData = async ({ queryKey }) => {
   } else if (taxonomy != "") {
     //query projects per topic or other taxonomy
     if (data == "media") {
-      apiRes = await fetch(
-        `${baseurl}/${data}?per_page=${perPage}/${taxonomy}`
-      );
+      apiRes = await fetch(`${baseurl}/${data}/${taxonomy}`);
     } else {
       apiRes = await fetch(
         `${baseurl}/${data}?per_page=${perPage}&${taxonomy}`
