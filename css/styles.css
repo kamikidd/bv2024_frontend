@@ -497,10 +497,16 @@ a:active {
     padding-bottom: 60px;
 }
 
+
+
 .staff-row {
     padding-bottom: 20px;
     --bs-gutter-x: 11rem;
 
+}
+
+#founder-row {
+    --bs-gutter-x: 0rem;
 }
 
 /*Projects*/
