@@ -65,7 +65,7 @@ const Staffs = () => {
         <Row className="staff-box">
           {staffs.data.map((staff) => (
             <Col key={staff.id}>
-              {staff.title.rendered == "Adrian Vatter" ?? (
+              {staff.title.rendered != "Adrian Vatter" ?? (
                 <StaffPicComp
                   imgid={staff.acf.imgid}
                   staffName={staff.title.rendered}
