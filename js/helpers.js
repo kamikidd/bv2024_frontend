@@ -1,3 +1,4 @@
+
 export function projectIdFetching(src, name) {
   let id = src.filter((s) => {
     return s.name == name;
@@ -102,3 +103,4 @@ export function deUmlaut(value) {
   value = value.replace(/ß/g, "ss");
   return value;
 }
+
