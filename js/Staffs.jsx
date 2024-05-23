@@ -67,7 +67,7 @@ const Staffs = () => {
               ""
             ) : (
               <Row key={staff.id} className="staff-row">
-                <Col xl={4} key={staff.id} className="staff-box">
+                <Col xl={5} className="staff-box">
                   {/* <Link
                     to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                     state={staff}
@@ -80,7 +80,7 @@ const Staffs = () => {
                   ></StaffPicComp>
                   {/* </Link> */}
                 </Col>
-                <Col className="my-auto staff-box">
+                <Col xl={7} className="my-auto staff-box">
                   Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
                   des Verwaltungsrates. Er ist seit 2009 Inhaber des Lehrstuhls
                   für Schweizer Politik am Institut für Politikwissenschaft der
