@@ -46,7 +46,7 @@ const Staffs = () => {
                 state={staff.id}
               >
                 <StaffPicComp
-                  image={staff.acf.foto_url}
+                  image={staff.acf.imgid}
                   staffName={staff.title.rendered}
                   position={staff.acf.position}
                   id={staff.title.rendered}
