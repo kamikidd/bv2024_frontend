@@ -45,12 +45,16 @@ const Staffs = () => {
                 to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                 state={staff.id}
               >
-                <StaffPicComp
-                  imgid={staff.acf.imgid}
-                  staffName={staff.title.rendered}
-                  position={staff.acf.position}
-                  id={staff.title.rendered}
-                ></StaffPicComp>
+                {staff.title.rendered == "Adrian Vatter" ? (
+                  ""
+                ) : (
+                  <StaffPicComp
+                    imgid={staff.acf.imgid}
+                    staffName={staff.title.rendered}
+                    position={staff.acf.position}
+                    id={staff.title.rendered}
+                  ></StaffPicComp>
+                )}
               </Link>
             </Col>
           ))}
@@ -59,13 +63,40 @@ const Staffs = () => {
       <Container className="categoryTitle">VERWALTUNGSRAT</Container>
       <Container className="staffs-content">
         <Row>
-          <Col className="staff-box">
+          {staffs.data.map((staff) => (
+            <Col
+              // xl={4}
+              // lg={4}
+              // md={6}
+              // sm={12}
+              className="staff-box"
+              key={staff.id}
+            >
+              <Link
+                to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
+                state={staff.id}
+              >
+                {staff.title.rendered == "Adrian Vatter" ? (
+                  <StaffPicComp
+                    imgid={staff.acf.imgid}
+                    staffName={staff.title.rendered}
+                    position={staff.acf.position}
+                    id={staff.title.rendered}
+                  ></StaffPicComp>
+                ) : (
+                  ""
+                )}
+              </Link>
+            </Col>
+          ))}
+
+          {/* <Col className="staff-box">
             <StaffPicComp
-              image={founder_pic}
+              imgid={founder_pic}
               staffName={"Adrian Vatter"}
               position={"Präsident des Verwaltungsrats"}
             ></StaffPicComp>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
       <br />
