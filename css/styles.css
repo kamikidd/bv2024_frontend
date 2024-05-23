@@ -293,7 +293,7 @@ span>img {
 }
 
 .selected_projects_list {
-    height: 30px;
+    min-height: 40px;
 }
 
 #selected_projects_list_link {
@@ -729,7 +729,6 @@ a#download_list {
 
 /*TitlePic*/
 .titleImg {
-    height: 200px;
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
