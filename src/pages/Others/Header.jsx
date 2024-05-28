@@ -1,11 +1,11 @@
 import { useState, React } from "react";
-import Nav from "react-bootstrap/Nav";
+// import Nav from "react-bootstrap/Nav";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+// import Button from "react-bootstrap/Button";
+// import Modal from "react-bootstrap/Modal";
 import TitlePictureComp from "../Others/TitlePictureComp";
 
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import logopic from "../../assets/imgs/logos/BV_logo.png";
 import sidelogpic from "../../assets/imgs/logos/side_logo.png";
 
@@ -17,11 +17,111 @@ const Header = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <Container fluid className="header-container">
-      <Container>
-        <Nav
-          id="nav"
-          className="border-bottom navbar fixed-top bg-white navbar-expand-lg navbar-light flex-nowrap"
+    <div className="pl-0 pr-0 2xl:container">
+      <div>
+        <nav className="bg-white">
+          <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
+            <div className="container flex flex-nowrap">
+              <Link to="/" className="navbar-brand">
+                <img
+                  className="w-64 h-20" //w266px,h90px
+                  src={logopic}
+                  alt="bv_logo"
+                />
+                <img
+                  src={sidelogpic}
+                  alt="bv_logo"
+                  className="hidden h-16 w-60 md:inline" //w233px, h60px
+                />
+              </Link>
+            </div>
+
+            <button
+              data-collapse-toggle="navbar-default"
+              type="button"
+              className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-default"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+            <div
+              className="hidden w-full md:block md:w-auto"
+              id="navbar-default"
+            >
+              <ul className="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
+                <li>
+                  <NavLink
+                    reloadDocument
+                    activeclassname="active"
+                    className="nav-link"
+                    aria-current="page"
+                    to="/Dienstleistungen"
+                  >
+                    Dienstleistungen
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Mitarbeitende"
+                    activeclassname="active"
+                    className="nav-link "
+                  >
+                    Über uns
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Themen"
+                    activeclassname="active"
+                    className="nav-link"
+                  >
+                    Themen
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Projekte"
+                    activeclassname="active"
+                    className="nav-link"
+                  >
+                    Projekte
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Kontakt"
+                    activeclassname="active"
+                    className="nav-link"
+                  >
+                    Kontakt
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        {/* <Nav
+          className="bg-white border-bottom navbar fixed-top navbar-expand-lg navbar-light flex-nowrap"
         >
           <Container id="header" className=" align-items-end">
             <Container id="logo">
@@ -172,13 +272,13 @@ const Header = () => {
               </Modal.Dialog>
             </Modal>
           </Container>
-        </Nav>
-      </Container>
+        </Nav> */}
+      </div>
 
-      <Container fluid className="title-pic-content">
+      <div className="mt-3 2xl:container 2xl:mx-auto">
         <TitlePictureComp page={page}></TitlePictureComp>
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 export default Header;

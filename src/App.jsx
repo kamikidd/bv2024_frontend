@@ -24,7 +24,7 @@ const queryClient = new QueryClient({
 });
 const App = () => {
   return (
-    <div className="App">
+    <div className="p-1 m-2 ">
       <HashRouter>
         <QueryClientProvider client={queryClient}>
           <Header></Header>

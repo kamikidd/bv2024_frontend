@@ -16,7 +16,7 @@ const Home = () => {
 
   const landing_intro = useQuery(
     ["landingIntro", "pages/28911", ""],
-    fetchData
+    fetchData,
   );
   if (services.isLoading || landing_intro.isLoading) {
     return <Spinner></Spinner>;
@@ -25,7 +25,7 @@ const Home = () => {
     navigate("/NotMatch404");
   }
   return (
-    <div id="home-content">
+    <div>
       <Container
         id="intro"
         dangerouslySetInnerHTML={{
