@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf");
+    font-weight: 400;
+}
+
+/* SemiBold (600) Weight */
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/Barlow_Condensed/BarlowCondensed-SemiBold.ttf");
+    font-weight: 600;
+}
+
+/* Medium Weight */
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/Barlow_Condensed/BarlowCondensed-Medium.ttf");
+    font-weight: 500;
+}
+
+/* Light Weight */
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/Barlow_Condensed/BarlowCondensed-Light.ttf");
+    font-weight: 300;
+}
+
+
+/*Font 2 : Karla */
+/* Regular Weight */
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/Karla/static/Karla-Regular.ttf");
+    font-weight: 400;
+}
+
+/* Medium Weight */
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/Karla/static/Karla-Medium.ttf");
+    font-weight: 500;
+}
+
+
+/* Light Weight */
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/Karla/static/Karla-Light.ttf");
+    font-weight: 300;
+}

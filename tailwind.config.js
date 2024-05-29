@@ -12,7 +12,15 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      colors: {
+        "theme-red": "#c00000",
+      },
+      fontFamily: {
+        Barlow_Condensed: ["Barlow Condensed", "sans-serif"],
+        Karla: ["Karla", "sans-serif"],
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

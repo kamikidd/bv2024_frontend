@@ -24,7 +24,7 @@ const queryClient = new QueryClient({
 });
 const App = () => {
   return (
-    <div className="p-1 m-2 ">
+    <div className="container">
       <HashRouter>
         <QueryClientProvider client={queryClient}>
           <Header></Header>
@@ -43,7 +43,7 @@ const App = () => {
             <Route path="/DataProtection" element={<DataProtection />}></Route>
             <Route path="*" element={<NoMatch404 />}></Route>
           </Routes>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </QueryClientProvider>
       </HashRouter>
     </div>

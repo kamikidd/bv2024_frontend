@@ -26,7 +26,7 @@ const Home = () => {
   }
   return (
     <div>
-      <Container
+      {/* <Container
         id="intro"
         dangerouslySetInnerHTML={{
           __html: DOMPurify.sanitize(landing_intro.data.content.rendered),
@@ -45,7 +45,6 @@ const Home = () => {
               key={service.id}
             >
               <Link to="/Dienstleistungen" state={service.title.rendered}>
-                {/* <Link to={`/Dienstleistungen/${service.title.rendered}`}> */}
                 <ServicePicComp
                   imgid={service.acf.imgid}
                   picName={service.title.rendered}
@@ -67,7 +66,7 @@ const Home = () => {
             <img src={symbol_goto} alt="Laufende Projekte" height="24px"></img>
           </span>
         </Link>
-      </Container>
+      </Container> */}
     </div>
   );
 };
