@@ -4,10 +4,10 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 // import Button from "react-bootstrap/Button";
 // import Modal from "react-bootstrap/Modal";
 import TitlePictureComp from "../Others/TitlePictureComp";
-
+import { Sidebar } from "flowbite-react";
 // import Container from "react-bootstrap/Container";
-import logopic from "../../assets/imgs/logos/BV_logo.png";
-import sidelogpic from "../../assets/imgs/logos/side_logo.png";
+import logo_sidelogo from "../../assets/imgs/logos/logos.png";
+import main_logo from "../../assets/imgs/logos/BV_logo.png";
 import { CloseButton } from "react-bootstrap";
 
 const Header = () => {
@@ -26,6 +26,132 @@ const Header = () => {
             className="flex flex-wrap items-center pb-4 space-x-3 rtl:space-x-reverse"
           >
             <img
+              // className="left-0 h-12 w-36 xl:h-20 xl:w-64" //w266px,h90px  w-46 h-14 //h-20 w-64 //h-12 w-36
+              className="left-0 h-14 w-46 xs:hidden"
+              src={main_logo}
+              alt="main_logo"
+            />
+            <img
+              src={logo_sidelogo}
+              alt="logos"
+              className="max-xs:hidden sm:h-16 md:h-24" //w233px, h60px md:h-16 md:w-60 xl:-mb-6
+            />
+          </Link>
+          <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+            <div className="text-center">
+              <button
+                className="flex items-center justify-center h-10 p-1 border-2 rounded-md w-14 border-theme-red text-theme-red hover:bg-red-700/20 hover:shadow-sm lg:hidden hover:shadow-red-600/60"
+                type="button"
+                data-drawer-target="drawer-right-example"
+                data-drawer-show="drawer-right-example"
+                data-drawer-placement="right"
+                aria-controls="drawer-right-example"
+              ></button>
+            </div>
+          </div>
+          <div
+            id="drawer-right-example"
+            className="fixed top-0 right-0 z-40 w-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-red-200 dark:bg-gray-800"
+            tabIndex="-1"
+            aria-labelledby="drawer-right-label"
+          >
+            <h5
+              id="drawer-right-label"
+              className="inline-flex items-center mb-4 text-xl font-semibold uppercase text-theme-red font-Barlow_Condensed dark:text-gray-400"
+            >
+              MENU
+            </h5>
+            <button
+              type="button"
+              data-drawer-hide="drawer-right-example"
+              aria-controls="drawer-right-example"
+              className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              <svg
+                className="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span className="sr-only">Close menu</span>
+            </button>
+            <div
+              className="items-center justify-between w-full lg:order-1 lg:flex lg:w-auto"
+              id="drawer-right-example"
+            >
+              <ul className="p-4 mb-3 font-medium md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                <li>
+                  <NavLink
+                    reloadDocument
+                    activeclassname="active"
+                    className="text-xl uppercase text-theme-red font-Barlow_Condensed "
+                    aria-current="page"
+                    to="/Dienstleistungen"
+                  >
+                    Dienstleistungen
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Mitarbeitende"
+                    activeclassname="active"
+                    className="block text-xl uppercase text-theme-red font-Barlow_Condensed"
+                  >
+                    Über uns
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Themen"
+                    activeclassname="active"
+                    className="block text-xl uppercase text-theme-red font-Barlow_Condensed"
+                  >
+                    Themen
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Projekte"
+                    activeclassname="active"
+                    className="block text-xl uppercase text-theme-red font-Barlow_Condensed"
+                  >
+                    Projekte
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    reloadDocument
+                    to="/Kontakt"
+                    activeclassname="active"
+                    className="block text-xl uppercase text-theme-red font-Barlow_Condensed"
+                  >
+                    Kontakt
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {/* <nav className="fixed top-0 z-20 w-full bg-white border-b border-gray-200 start-0 dark:border-gray-600 dark:bg-gray-900">
+        <div className="flex items-center justify-between max-w-screen-xl p-4 mx-auto flex-nowrap lg:items-end">
+          <Link
+            to="/"
+            className="flex flex-wrap items-center pb-4 space-x-3 rtl:space-x-reverse"
+          >
+            <img
               className="left-0 w-44 h-14 xl:h-20 xl:w-64" //w266px,h90px
               src={logopic}
               alt="bv_logo"
@@ -36,6 +162,30 @@ const Header = () => {
               className="min-[100px]:max-[488px]:hidden  min-[489px]:max-sm:h-12 min-[489px]:max-sm:w-48 min-[489px]:max-sm:-mb-4 ml-4 sm:max-xl:-mb-4 sm:max-xl:h-12 sm:max-xl:w-48 xl:-mb-6" //w233px, h60px md:h-16 md:w-60 xl:-mb-6
             />
           </Link>
+          <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+            <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              className="flex items-center justify-center h-10 p-1 border-2 rounded-md w-14 border-theme-red text-theme-red hover:bg-red-700/20 hover:shadow-sm lg:hidden hover:shadow-red-600/60"
+              aria-controls="navbar-default"
+              aria-expanded="true"
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  fillRule="evenodd"
+                  d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+              </svg>
+            </button>
+          </div>
 
           <div
             className="items-center justify-between hidden w-full lg:order-1 lg:flex lg:w-auto"
@@ -96,7 +246,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
       {/*</div>
      <div className="container">
       <nav className="fixed top-0 z-20 w-full bg-white border-b border-gray-200 start-0 dark:border-gray-600 dark:bg-gray-900">
