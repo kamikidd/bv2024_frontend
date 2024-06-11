@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link, useLocation } from "react-router-dom";
 import DownloadPDF from "./DownloadPDF";
+import styles from "./projects.module.css";
 
 const ProjectDetail = () => {
   const location = useLocation();
@@ -18,23 +19,25 @@ const ProjectDetail = () => {
       <Container>
         <Row>
           <Col xl={4}>
-            <div id="back_btn_projectdetail" className="text_color">
+            <div className={`${styles.back_btn_projectdetail} text_color`}>
               <Link to="/Projekte">ZURÜCK</Link>
             </div>
           </Col>
 
           <Col xl={8}>
             <Row>
-              <Col className="project_detail_title">{state.title.rendered}</Col>
+              <Col className={`${styles.project_detail_title}`}>
+                {state.title.rendered}
+              </Col>
             </Row>
             {detail.kooperationspartner ? (
               <Row>
-                <Col className="detail_left" xl={3}>
+                <Col className={`${styles.detail_left}`} xl={3}>
                   Kooperationspartner
                 </Col>
-                <Col className="detail_right" xl={9}>
+                <Col className={`${styles.detail_right}`} xl={9}>
                   {partners.map((line, index) => (
-                    <ul id="partner" key={index}>
+                    <ul className={`${styles.partner}`} key={index}>
                       {line}
                     </ul>
                   ))}
@@ -44,10 +47,10 @@ const ProjectDetail = () => {
             ) : null}
             {detail.auftraggeber ? (
               <Row>
-                <Col className="detail_left" xl={3}>
+                <Col className={`${styles.detail_left}`} xl={3}>
                   Auftraggeber
                 </Col>
-                <Col className="detail_right" xl={9}>
+                <Col className={`${styles.detail_right}`} xl={9}>
                   {detail.auftraggeber}
                 </Col>
                 <hr />
@@ -55,10 +58,10 @@ const ProjectDetail = () => {
             ) : null}
             {detail.Jahr ? (
               <Row>
-                <Col className="detail_left" xl={3}>
+                <Col className={`${styles.detail_left}`} xl={3}>
                   Laufzeit
                 </Col>
-                <Col className="detail_right" xl={9}>
+                <Col className={`${styles.detail_right}`} xl={9}>
                   {detail.Jahr}
                 </Col>
                 <hr />
@@ -67,10 +70,10 @@ const ProjectDetail = () => {
 
             {detail.inhalte ? (
               <Row>
-                <Col className="detail_left" xl={3}>
+                <Col className={`${styles.detail_left}`} xl={3}>
                   Inhalte
                 </Col>
-                <Col className="detail_right" xl={9}>
+                <Col className={`${styles.detail_right}`} xl={9}>
                   {detail.inhalte}
                 </Col>
                 <hr />
@@ -79,12 +82,12 @@ const ProjectDetail = () => {
 
             {detail.vorgehenmethoden ? (
               <Row>
-                <Col className="detail_left" xl={3}>
+                <Col className={`${styles.detail_left}`} xl={3}>
                   Vorgehen/Methoden
                 </Col>
-                <Col className="detail_right" xl={9}>
+                <Col className={`${styles.detail_right}`} xl={9}>
                   {methods.map((line, index) => (
-                    <ul id="method" key={index}>
+                    <ul className={`${styles.method}`} key={index}>
                       -{line}
                     </ul>
                   ))}
@@ -96,21 +99,21 @@ const ProjectDetail = () => {
             {detail.downloads_1 || detail.downloads_2 || detail.downloads_3 ? (
               <Row>
                 <Col>
-                  <Row className="detail_left" xl={3}>
+                  <Row className={`${styles.detail_left}`} xl={3}>
                     Downloads
                   </Row>
                   {detail.downloads_1 ? (
-                    <Row className="detail_right" xl={9}>
+                    <Row className={`${styles.detail_right}`} xl={9}>
                       <DownloadPDF prop={detail.downloads_1}></DownloadPDF>
                     </Row>
                   ) : null}
                   {detail.downloads_2 ? (
-                    <Row className="detail_right" xl={9}>
+                    <Row className={`${styles.detail_right}`} xl={9}>
                       <DownloadPDF prop={detail.downloads_2}></DownloadPDF>
                     </Row>
                   ) : null}
                   {detail.downloads_3 ? (
-                    <Row className="detail_right" xl={9}>
+                    <Row className={`${styles.detail_right}`} xl={9}>
                       <DownloadPDF prop={detail.downloads_3}></DownloadPDF>
                     </Row>
                   ) : null}

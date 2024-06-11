@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import TitlePictureComp from "../Others/TitlePictureComp";
+import TitlePictureComp from "./TitlePictureComp";
 
 import Container from "react-bootstrap/Container";
 import logopic from "../../assets/imgs/logos/BV_logo.png";
@@ -17,24 +17,21 @@ const Header = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <Container fluid className="header-container">
+    <Container fluid className="header_container">
       <Container>
-        <Nav
-          id="nav"
-          className="border-bottom navbar fixed-top bg-white navbar-expand-lg navbar-light flex-nowrap"
-        >
-          <Container id="header" className=" align-items-end">
-            <Container id="logo">
+        <Nav className="border-bottom navbar fixed-top bg-white navbar-expand-lg navbar-light flex-nowrap">
+          <Container className="align-items-end">
+            <Container id="logo_nav_container">
               <Link to="/" className="navbar-brand">
                 <img
-                  id="logoimg1"
+                  id="logo_img1"
                   src={logopic}
                   alt="bv_logo"
                   width="266"
                   height="90"
                 />
                 <img
-                  id="logoimg2"
+                  id="logo_img2"
                   src={sidelogpic}
                   alt="bv_logo"
                   width="233"
@@ -45,7 +42,7 @@ const Header = () => {
             </Container>
 
             <div className="collapse navbar-collapse" id="navbarNav">
-              <ul id="navbtn" className="navbar-nav">
+              <ul id="nav_btn" className="navbar-nav">
                 <li className="nav-item">
                   <NavLink
                     reloadDocument
@@ -175,7 +172,7 @@ const Header = () => {
         </Nav>
       </Container>
 
-      <Container fluid className="title-pic-content">
+      <Container fluid className="title_pic_content">
         <TitlePictureComp page={page}></TitlePictureComp>
       </Container>
     </Container>

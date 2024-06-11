@@ -1,0 +1,14 @@
+.topic_row>* {
+    padding-bottom: 20px;
+    --bs-gutter-x: 0.5rem;
+}
+
+.topics_content {
+    margin-top: 20px;
+    display: flex;
+}
+
+.topic_box {
+    display: flex;
+    justify-content: center;
+}

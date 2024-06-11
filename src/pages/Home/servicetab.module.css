@@ -1,0 +1,12 @@
+.home_service_content {
+    margin-top: 20px;
+}
+
+.home_service_box {
+    margin-bottom: 20px
+}
+
+.home_service_row {
+    padding-bottom: 20px;
+    --bs-gutter-x: 2.5rem;
+}

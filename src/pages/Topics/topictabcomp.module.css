@@ -1,0 +1,42 @@
+.topic_pic_Container {
+    position: relative;
+    overflow: hidden;
+}
+
+.topic_pic_Container:hover img {
+    transform: scale(1.1);
+    transition: .3s ease;
+    opacity: 0.75;
+}
+
+.topic_pic {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    opacity: 1;
+}
+
+.topic_pic_caption {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 78px;
+}
+
+.topic_pic_caption {
+    background-color: rgb(192, 0, 0, 1);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.002em;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+
+div.topic_pic_text {
+    padding-left: 4px;
+    height: 78px;
+    align-items: center;
+    display: grid;
+}

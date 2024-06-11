@@ -3,30 +3,34 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import location from "../../assets/imgs/map.png";
 import { Link } from "react-router-dom";
+import styles from "./contact.module.css";
 const Contact = () => {
   return (
     <div>
       <Container className="categoryTitle">KONTAKT</Container>
-      <Container id="message">
+      <Container className={`${styles.message}`}>
         Wir freuen uns über Ihre Kontaktaufnahme!
       </Container>
       <Container>
-        <Row id="contact-row">
+        <Row>
           <Col xl={7} lg={8} xs={12}>
-            <img id="map" src={location} alt="map" />
+            <img className={`${styles.map}`} src={location} alt="map" />
           </Col>
           <Col xl={5} lg={4} xs={12}>
-            <div id="contact_company_name">
+            <div className={`${styles.contact_company_name}`}>
               Büro Vatter AG <br></br> Politikanalyse
             </div>
-            <div className="contact_info">
+            <div className={`${styles.contact_info}`}>
               Gerberngasse 27<br></br>CH-3011 Bern
             </div>
             <br></br>
-            <div className="contact_info">+41 31 312 65 75</div>
+            <div className={`${styles.contact_info}`}>+41 31 312 65 75</div>
             <br></br>
             <div>
-              <Link to="" className="contact_info email_link">
+              <Link
+                to=""
+                className={`${styles.contact_info} ${styles.email_link}`}
+              >
                 info@buerovatter.ch
               </Link>
             </div>
@@ -34,12 +38,12 @@ const Contact = () => {
             <br></br>
             <Row>
               <Col>
-                <Link to="" className="addr_info">
+                <Link to="" className={`${styles.addr_info}`}>
                   Google Maps
                 </Link>
               </Col>
               <Col>
-                <Link to="" className="addr_info">
+                <Link to="" className={`${styles.addr_info}`}>
                   Printable Map
                 </Link>
               </Col>
@@ -47,8 +51,12 @@ const Contact = () => {
           </Col>
         </Row>
 
-        <div id="contact_addr_title">Wegbeschreibung ab Bahnhof Bern</div>
-        <p id="contact_addr_detail">
+        <div className={`${styles.contact_addr_title}`}>
+          {/* TODO: get text below from restapi*/}
+          Wegbeschreibung ab Bahnhof Bern
+        </div>
+        <p className={`${styles.contact_addr_detail}`}>
+          {/* TODO: get text below from restapi*/}
           Bus Nr. 12 Richtung Zentrum Paul Klee benützen, bis Haltestelle
           Nydegg. <br></br>
           In Fahrtrichtung einige Meter weiter gehen, vor der Nydeggbrücke

@@ -6,13 +6,14 @@ import fertigpic from "../../assets/imgs/symbols/finished.png";
 import arrowrightpic from "../../assets/imgs/symbols/arrow-right.png";
 import { Link } from "react-router-dom";
 import { deUmlaut } from "../../utils/helpers";
+import styles from "./projects.module.css";
+
 const Project = (prop) => {
   const title = deUmlaut(prop.title);
-  console.log(prop);
   return (
     <div>
-      <Container id="project_list">
-        <Row id="project_row" className="gx-3">
+      <Container className={`${styles.project_list}`}>
+        <Row className={`gx-3 ${styles.project_row}`}>
           <Col xs="auto d-flex align-items-center">
             {prop.laufend ? (
               <img src={laufendpic} alt="laufend"></img>
@@ -23,24 +24,26 @@ const Project = (prop) => {
           <Col>
             <Row>
               {prop.laufend ? (
-                <div className="list_smallFont_red">laufend</div>
+                <div className={`${styles.list_smallFont_red}`}>laufend</div>
               ) : (
-                <div className="list_smallFont">{prop.detail.acf.Jahr}</div>
+                <div className={`${styles.list_smallFont}`}>
+                  {prop.detail.acf.Jahr}
+                </div>
               )}
-              <div className="list_smallFont">
+              <div className={`${styles.list_smallFont}`}>
                 {prop.detail.acf.auftraggeber}
               </div>
 
               <Link
-                className="project_list_btn"
+                className={`${styles.project_list_btn}`}
                 to={`/Projekt/${title}`}
                 state={prop.detail}
               >
                 <div className="d-flex justify-content-between">
-                  <div className="list_title">{prop.title}</div>
+                  <div className={`${styles.list_title}`}>{prop.title}</div>
 
                   <img
-                    className="project_list_arrow"
+                    className={`${styles.project_list_arrow}`}
                     src={arrowrightpic}
                     width="24px"
                     height="24px"
@@ -51,7 +54,7 @@ const Project = (prop) => {
             </Row>
           </Col>
         </Row>
-        <hr id="sep" />
+        <hr className={`${styles.sep}`} />
       </Container>
     </div>
   );

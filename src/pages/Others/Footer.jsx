@@ -2,12 +2,13 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import linkedin_logo from "../../assets/imgs/logos/linkedin_logo_l.png";
+import styles from "./footer.module.css";
 const Footer = () => {
   return (
-    <Container fluid className="border-top footer ">
-      <Container className="text-center ">
+    <Container fluid className={`border-top ${styles.footer}`}>
+      <Container className="text-center">
         <div className="row flex-row-reverse">
-          <section id="infos" className="col-xxl-6 footertext text-xxl-end">
+          <section className={`col-xxl-6 text-xxl-end ${styles.footer_text}`}>
             <span>
               <Link to="/Kontakt">Kontakt</Link>&nbsp; | &nbsp;
               <Link to="/Imprint">Impressum</Link>&nbsp; | &nbsp;
@@ -25,8 +26,7 @@ const Footer = () => {
             </a>
           </section>
           <section
-            id="copyright"
-            className="col-xxl-3 text-xxl-start text-nowrap"
+            className={`col-xxl-3 text-xxl-start text-nowrap ${styles.copyright}`}
           >
             © 2023 Büro Vatter
           </section>

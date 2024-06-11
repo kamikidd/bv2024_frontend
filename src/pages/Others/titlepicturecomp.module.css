@@ -1,0 +1,22 @@
+.titleImg {
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: end;
+    background-color: rgb(192, 0, 0, 0.75);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    height: 45px;
+    padding-right: 0.5em;
+}

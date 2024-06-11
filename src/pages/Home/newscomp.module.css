@@ -1,0 +1,23 @@
+.news_title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+
+.news_date {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.news_content {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 35px;
+}

@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
 import { Link, createSearchParams, useNavigate } from "react-router-dom";
 import Spinner from "../Others/Spinner";
-
+import styles from "./topic.module.css";
 const Topics = () => {
   const navigate = useNavigate();
   const topics = useQuery(["alltopics", "themen", ""], fetchData);
@@ -19,8 +19,8 @@ const Topics = () => {
   return (
     <div>
       <Container className="categoryTitle">THEMEN</Container>
-      <Container className="topics-content">
-        <Row className="topic-row">
+      <Container className={`${styles.topics_content}`}>
+        <Row className={`${styles.topic_row}`}>
           {topics.data.map((topic) => (
             <Col
               xxl="auto"
@@ -28,7 +28,7 @@ const Topics = () => {
               lg={4}
               md={6}
               sm={6}
-              className="topic-box"
+              className={`${styles.topic_box}`}
               key={topic.id}
             >
               <Link

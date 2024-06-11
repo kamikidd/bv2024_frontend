@@ -6,6 +6,8 @@ import notmatch404_pic from "../../assets/imgs/titlephoto/NotMatch404.png";
 import projects_pic from "../../assets/imgs/titlephoto/Projekte.png";
 import project_pic from "../../assets/imgs/titlephoto/Projekt.png";
 import topics_pic from "../../assets/imgs/titlephoto/Themen.png";
+import styles from "./titlepicturecomp.module.css";
+
 const TitlePictureComp = ({ page }) => {
   let titlePic = page.split("/", 1)[0];
   let urlbase = hometitle_pic;
@@ -43,13 +45,13 @@ const TitlePictureComp = ({ page }) => {
   }
   return (
     <div
-      className="titleImg"
+      className={`${styles.titleImg}`}
       style={{
         backgroundImage: `url(${urlbase})`,
       }}
     >
-      <div className="caption">
-        <div className="container">{msg}</div>
+      <div className={`${styles.caption}`}>
+        <div>{msg}</div>
       </div>
     </div>
   );

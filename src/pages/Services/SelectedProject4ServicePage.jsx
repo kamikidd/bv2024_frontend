@@ -12,7 +12,7 @@ const SelectedProject4ServicePage = ({ service, isshownid }) => {
       `projekte`,
       `isshownonserviceinfopage=${isshownid}&service=${service}`,
     ],
-    fetchData
+    fetchData,
   );
   if (projects_on_service_page.isLoading) {
     return <Spinner></Spinner>;

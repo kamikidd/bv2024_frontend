@@ -1,0 +1,49 @@
+.message {
+    padding-bottom: 26px;
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+}
+
+.contact_company_name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+.contact_addr_title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 20px;
+
+}
+
+.contact_addr_detail {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.addr_info {
+    margin-bottom: 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #C00000;
+}
+
+.map {
+    /* margin-right: 10vw; */
+    margin-bottom: 40px;
+}
+
+.contact_info {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.email_link {
+    color: #C00000;
+}

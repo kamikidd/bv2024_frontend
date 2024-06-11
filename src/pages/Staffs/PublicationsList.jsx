@@ -2,14 +2,19 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import DOMPurify from "dompurify";
 import download_symbol from "../../assets/imgs/symbols/download.png";
+import styles from "./staffs.module.css";
+
 const PublicationsList = ({ prop }) => {
   return (
     <div>
-      <Container className="pub_list">
-        <ul id="publication_list">
+      <Container className={`${styles.pub_list}`}>
+        <ul className={`${styles.publication_list}`}>
           <li>
             <Row>
-              <a id="selected_projects_list_link" href={prop.acf.url}>
+              <a
+                className={`${styles.publication_list_link}`}
+                href={prop.acf.url}
+              >
                 <div className="d-flex justify-content-between">
                   <span
                     className="symbol"
@@ -28,10 +33,10 @@ const PublicationsList = ({ prop }) => {
             </Row>
             <Row>
               <div
-                id="subtitle"
+                className="subtitle"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(
-                    `${prop.acf.herausgeber} - ${prop.acf.zeitraum}`
+                    `${prop.acf.herausgeber} - ${prop.acf.zeitraum}`,
                   ),
                 }}
               ></div>

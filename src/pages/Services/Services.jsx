@@ -11,22 +11,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { projectIdFetching } from "../../utils/helpers";
 import Spinner from "../Others/Spinner";
-
-// const btn_active = {
-//   background: "#C00000",
-//   color: "#fff",
-//   textdecoration: "none",
-//   textTransform: "uppercase",
-//   FontWeight: "600",
-//   boxShadow: "none",
-// };
-// const btn_inactive = {
-//   background: "#ffffff",
-//   color: "#000000",
-//   boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 4px",
-//   FontWeight: "500",
-// };
-
+import styles from "./service.module.css";
 const Services = () => {
   // const param = useParams();
   const location = useLocation();
@@ -38,7 +23,7 @@ const Services = () => {
   const services = useQuery(["services", "dienstleistungen", ""], fetchData);
   const targetedCaterogy = useQuery(
     ["showonservicepage", "isshownonserviceinfopage", ""],
-    fetchData
+    fetchData,
   );
 
   if (services.isLoading || targetedCaterogy.isLoading) {
@@ -61,7 +46,6 @@ const Services = () => {
       <Container className="categoryTitle">DIENSTLEISTUNGEN</Container>
       <Container>
         <Tab.Container
-          id="tabs"
           defaultActiveKey={state ? state : services.data[0].title.rendered}
         >
           <Row>
@@ -95,12 +79,12 @@ const Services = () => {
             </Col>
           </Row>
           <Row>
-            <Col xl={4} className="service_part2">
-              <div className="service_projects_list_title">
+            <Col xl={4} className={`${styles.service_part2}`}>
+              <div className={`${styles.service_projects_list_title}`}>
                 Ausgewählte Projekte
               </div>
             </Col>
-            <Col xl={8} className=" service_part2">
+            <Col xl={8} className={`${styles.service_part2}`}>
               <Tab.Content>
                 {services.data.map((service) => (
                   <Tab.Pane key={service.id} eventKey={service.title.rendered}>

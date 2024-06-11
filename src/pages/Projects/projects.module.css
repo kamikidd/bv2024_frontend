@@ -7,14 +7,12 @@
     font-size: 24px;
     font-weight: 500;
     text-align: center;
-
 }
 
 .container.withbtn {
     display: flex;
     justify-content: space-between;
 }
-
 
 .hr {
     margin-top: 0px;
@@ -42,8 +40,6 @@
     background: none;
     font-family: 'Barlow Condensed', sans-serif;
     color: #000000;
-
-
     cursor: pointer;
     font-size: 20px;
     font-weight: 500;
@@ -81,4 +77,165 @@
     font-size: 20px;
     font-weight: 400;
     color: #c00000;
+}
+
+.back_btn_projectdetail {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline;
+    line-height: 88px;
+    padding-left: 0px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid #936464;
+    height: 47px;
+    width: 390px;
+    font-size: 24px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 300;
+    color: #525151;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+.search_label {
+    margin-bottom: 79px;
+}
+
+.clear_input_container {
+    position: relative;
+    display: inline-block;
+}
+
+.clear_search {
+    position: absolute;
+    right: 15px;
+    top: -10px;
+    bottom: 0px;
+    /* button appearane */
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 47px;
+    appearance: none;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #C00000;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+#clearSearch::hover {
+    transform: scale(1.05);
+}
+
+.filter_label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.filter_list {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.detail_left {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.detail_right {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+
+.partner {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.method {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+div.project_detail_title.col {
+    padding: 10px;
+}
+
+.project_detail_title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+a.download_list {
+    color: #C00000;
+    font-size: 1em;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 5px 0px;
+}
+
+.download_list:hover {
+    text-decoration: underline;
+}
+
+.project_list {
+    padding: 0;
+}
+
+.project_row {
+    padding-bottom: 0px;
+}
+
+.project_list_btn {
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.project_list_arrow {
+    margin-top: 8px;
+}
+
+.list_smallFont {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #525151;
+}
+
+.list_smallFont_red {
+    color: #C00000;
+}
+
+.list_title {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 152%;
+    margin-top: 5px;
+    color: #000000;
+}
+
+.sep {
+    margin-top: 0;
+    margin-bottom: 40px;
 }

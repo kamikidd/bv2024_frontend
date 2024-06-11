@@ -25,11 +25,11 @@ const Projects = () => {
   const [titleName, setTitleName] = useState("");
   const [selectedService, setSelectedService] = useState(undefined);
   const [selectedTopic, setSelectedTopic] = useState(
-    param.id == "laufend" ? undefined : searchParams.get("Themen")
+    param.id == "laufend" ? undefined : searchParams.get("Themen"),
   );
 
   const [filterLaufend, setFilterLaufend] = useState(
-    param.id == "laufend" ? true : false
+    param.id == "laufend" ? true : false,
   );
   const [isClear, setIsClear] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
@@ -119,7 +119,7 @@ const Projects = () => {
   const filteredItems = projects_before_filtered.filter(
     (project) =>
       project.title.rendered.toLowerCase().indexOf(titleName.toLowerCase()) !==
-      -1
+      -1,
   );
 
   const result = filteredData(
@@ -129,7 +129,7 @@ const Projects = () => {
     filterLaufend ? result_laufend : projects.data,
     selectedService,
     selectedTopic,
-    titleName
+    titleName,
   );
 
   return (
@@ -146,7 +146,7 @@ const Projects = () => {
             ></SearchInputComp>
             <br />
 
-            <div className="filter_label">
+            <div className={`${styles.filter_label}`}>
               Filtern nach Thema:<br></br>
               <SelectComp
                 isPreSelected={selectedTopic ?? undefined}
@@ -157,7 +157,7 @@ const Projects = () => {
                 isCleared={handleClearStatus}
               ></SelectComp>
             </div>
-            <div className="filter_label">
+            <div className={`${styles.filter_label}`}>
               Filtern nach Dienstleistung:<br></br>
               <SelectComp
                 isPreSelected={selectedService ?? undefined}

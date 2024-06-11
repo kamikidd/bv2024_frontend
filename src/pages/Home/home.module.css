@@ -1,0 +1,21 @@
+.intro {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 25px;
+    text-align: left;
+}
+
+.current_projects {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 40px;
+    color: #C00000;
+}
+
+/* .link_to_current_projects {
+    padding-left: 5px;
+} */

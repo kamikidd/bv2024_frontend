@@ -1,28 +1,27 @@
 import linkedin_logo from "../../assets/imgs/logos/linkedIn_logo_s.png";
 import { Link } from "react-router-dom";
+import styles from "./staffs.module.css";
 
 const StaffDetailCompLeft = ({ staff, img }) => {
   const information = staff.acf.otherInfo.split("\r\n");
   return (
     <div>
-      <div id="staff_box">
-        <img id="staff_detail_pic" src={img} alt="staff" />
+      <div className={`${styles.staff_left_box}`}>
+        <img className={`${styles.staff_detail_pic}`} src={img} alt="staff" />
         <div>
-          <div id="staff_name" className="staff_info">
-            {staff.title.rendered}
-          </div>
-          <div id="staff_position" className="staff_info">
-            {staff.acf.position}
-          </div>
-          <ul className="staff_info_position">
+          <div className={`${styles.staff_name}`}>{staff.title.rendered}</div>
+          <div className={`${styles.staff_info}`}>{staff.acf.position}</div>
+          <ul className={`${styles.staff_info_position}`}>
             {information.map((line, index) => (
-              <ul id="info_line" key={index}>
+              <ul className={`${styles.info_line}`} key={index}>
                 {line}
               </ul>
             ))}
           </ul>
-          <div id="staff_detail_left_bottom_element">
-            <div className="text_color staff_info_position info_link">
+          <div className={`${styles.staff_detail_left_bottom_element}`}>
+            <div
+              className={`text_color ${styles.staff_info_position} ${styles.info_link}`}
+            >
               {/* <img
               src="imgs/symbols/fi_mail.png"
               alt="email"
@@ -31,7 +30,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
               {/* todo  */}
               {staff.acf.email}
             </div>
-            <div className="text_color staff_info_position ">
+            <div className={`text_color   ${styles.staff_info_position}`}>
               {/* <img
               src="imgs/symbols/phone.png"
               alt="tel"
@@ -40,8 +39,8 @@ const StaffDetailCompLeft = ({ staff, img }) => {
               {staff.acf.telephone}
             </div>
             {staff.acf.linkedin != "" ? (
-              <div className="text_color staff_info_position">
-                <a href={staff.acf.linkedin} className="info_link">
+              <div className={`text_color ${styles.staff_info_position}`}>
+                <a href={staff.acf.linkedin} className={`${styles.info_link}`}>
                   <img
                     src={linkedin_logo}
                     width="31px"
@@ -55,7 +54,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
           </div>
         </div>
 
-        <div id="back_btn" className="text_color">
+        <div className={`text_color ${styles.back_btn}`}>
           <Link to="/Mitarbeitende">ZURÜCK</Link>
         </div>
       </div>

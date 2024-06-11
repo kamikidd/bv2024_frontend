@@ -1,0 +1,164 @@
+/*Staffs*/
+.about {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.staffs_content {
+    margin-top: 20px;
+
+}
+
+.staff_box {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+
+.staff_row {
+    padding-bottom: 20px;
+    --bs-gutter-x: 11rem;
+
+}
+
+/*StaffDetail*/
+/*----left----*/
+.staff_left_box {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 350px;
+    height: 880px;
+    padding-bottom: 20px;
+}
+
+.staff_name {
+    font-family: 'Barlow Condensed', sans-serif;
+    width: 350px;
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+
+
+.staff_detail_pic {
+    width: 350px;
+    padding-bottom: 24px;
+}
+
+.staff_info {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    width: 350px;
+    text-align: center;
+
+}
+
+ul.staff_info_position {
+    height: 160px;
+    line-height: 25px;
+    padding-top: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 0px;
+}
+
+.info_line {
+    padding-left: 0px;
+    text-align: center;
+}
+
+div.staff_info_position {
+    padding-bottom: 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.staff_detail_left_bottom_element {
+    width: 50%;
+    margin: auto;
+}
+
+.info_link {
+    text-decoration: underline;
+}
+
+
+
+.back_btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline;
+    line-height: 88px;
+    padding-left: 26px;
+}
+
+
+/*----right----*/
+div h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.staff_detail_title {
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.section_box {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+a:link {
+    color: #C00000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #C00000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C00000;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #C00000;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/*publication part*/
+.pub_list {
+    padding: 0px;
+}
+
+ul.publication_list {
+    margin-bottom: 0px;
+}
+
+.publication_list_link {
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+}
+
+.publication_list_link:hover {
+    color: #C00000;
+}

@@ -1,0 +1,20 @@
+/*Footer*/
+.footer {
+    background-color: #fff;
+    margin-top: auto;
+    /*keep footer at bottom but not fixed*/
+}
+
+.footer_text a {
+    color: #C00000;
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}
+
+.copyright {
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+}

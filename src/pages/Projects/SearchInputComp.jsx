@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import styles from "./projects.module.css";
+
 const SearchInputComp = ({ onChange, isClear, isCleared }) => {
   const [titleName, setTitleName] = useState("");
   const [hideClearBtn, setHideClearBtn] = useState(true);
@@ -29,8 +31,8 @@ const SearchInputComp = ({ onChange, isClear, isCleared }) => {
   }, [isClear, isCleared]);
   return (
     <div>
-      <label htmlFor="titleName" className="search_label">
-        <div className="clear-input-container">
+      <label htmlFor="titleName" className={`${styles.search_label}`}>
+        <div className={`${styles.clear_input_container}`}>
           <input
             type="text"
             id="titleName"
@@ -42,7 +44,7 @@ const SearchInputComp = ({ onChange, isClear, isCleared }) => {
             onKeyDown={handleKeyDown}
           />
           <button
-            id="clearSearch"
+            className={`${styles.clear_search}`}
             type="reset"
             aria-label="Clear input"
             title="Clear input"

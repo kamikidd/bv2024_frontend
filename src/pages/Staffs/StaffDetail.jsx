@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import Spinner from "../Others/Spinner";
 import { useFetchMedia } from "../../utils/useFetchMedia";
 import unknownstaff_pic from "../../assets/imgs/staffs/unknown.png";
+
 const StaffDetail = () => {
   const location = useLocation();
   const state = location.state;
@@ -16,7 +17,7 @@ const StaffDetail = () => {
   const media = useFetchMedia(state.acf.imgid, unknownstaff_pic);
   const staffdetails = useQuery(
     ["staffdetails", `mitarbeitende/${state.id}`, ""],
-    fetchData
+    fetchData,
   );
 
   if (staffdetails.isLoading) {
@@ -29,7 +30,7 @@ const StaffDetail = () => {
     <div>
       <Container className="categoryTitle">MITARBEITENDE</Container>
 
-      <Container className="staff-detail">
+      <Container>
         <Row>
           <Col xl={4}>
             <StaffDetailCompLeft

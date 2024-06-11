@@ -1,0 +1,35 @@
+.service_pic {
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    backface-visibility: hidden;
+    margin: auto;
+
+}
+
+.pic_container:hover img {
+    transform: scale(1.1);
+    transition: .3s ease;
+    opacity: 0.65;
+}
+
+.pic_container:hover {
+    box-shadow: none;
+}
+
+.service_pic_caption {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    height: 1.5em;
+    background-color: rgb(192, 0, 0, 1);
+    color: #fff;
+    font-size: 2em;
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+}

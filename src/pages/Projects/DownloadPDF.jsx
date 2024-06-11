@@ -5,13 +5,15 @@ import Row from "react-bootstrap/Row";
 import fetchData from "../../utils/fetchData";
 import DOMPurify from "dompurify";
 import download_symbol from "../../assets/imgs/symbols/download.png";
+import styles from "./projects.module.css";
+
 const DownloadPDF = (prop) => {
   console.log(prop.prop);
   const navigate = useNavigate();
 
   const downloads_1 = useQuery(
     ["downloads_1", `media/${prop.prop}`, ""],
-    fetchData
+    fetchData,
   );
 
   if (downloads_1.isLoading) {
@@ -24,7 +26,10 @@ const DownloadPDF = (prop) => {
   return (
     <div>
       <Row>
-        <a id="download_list" href={downloads_1.data.source_url}>
+        <a
+          className={`${styles.download_list}`}
+          href={downloads_1.data.source_url}
+        >
           <div className="d-flex justify-content-between">
             <span
               className="symbol"
