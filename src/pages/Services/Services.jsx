@@ -78,17 +78,19 @@ const Services = () => {
               </Tab.Content>
             </Col>
           </Row>
-          <Row>
-            <Col xl={4} className={`${styles.service_part2}`}>
-              <div className={`${styles.service_projects_list_title}`}>
+          <Row className={`${styles.service_paragraph_spacing}`}>
+            <Col xl={4}>
+              <div
+                className={`${styles.service_projects_list_title}  ${styles.service_paragraph_spacing}`}
+              >
                 Ausgewählte Projekte
               </div>
             </Col>
-            <Col xl={8} className={`${styles.service_part2}`}>
+            <Col xl={8}>
               <Tab.Content>
                 {services.data.map((service) => (
                   <Tab.Pane key={service.id} eventKey={service.title.rendered}>
-                    <div>
+                    <div className={`${styles.service_paragraph_spacing}`}>
                       <SelectedProject4ServicePage
                         service={service.acf.service_taxonomy}
                         isshownid={id[0].id}

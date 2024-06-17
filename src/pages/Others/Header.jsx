@@ -4,10 +4,9 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import TitlePictureComp from "./TitlePictureComp";
-
 import Container from "react-bootstrap/Container";
-import logopic from "../../assets/imgs/logos/BV_logo.png";
-import sidelogpic from "../../assets/imgs/logos/side_logo.png";
+import bv_logo from "../../assets/imgs/logos/bv_logo.svg";
+import side_logo from "../../assets/imgs/logos/side_logo.svg";
 
 const Header = () => {
   const location = useLocation();
@@ -20,89 +19,89 @@ const Header = () => {
     <Container fluid className="header_container">
       <Container>
         <Nav className="border-bottom navbar fixed-top bg-white navbar-expand-lg navbar-light flex-nowrap">
-          <Container className="align-items-end">
+          <Container>
             <Container id="logo_nav_container">
               <Link to="/" className="navbar-brand">
                 <img
-                  id="logo_img1"
-                  src={logopic}
-                  alt="bv_logo"
-                  width="266"
-                  height="90"
+                  src={bv_logo}
+                  alt="logo"
+                  height="100px"
+                  className="main_logo"
                 />
                 <img
-                  id="logo_img2"
-                  src={sidelogpic}
-                  alt="bv_logo"
-                  width="233"
-                  height="60"
-                  className="align-bottom"
+                  src={side_logo}
+                  height="98px"
+                  alt="side_logo"
+                  className="side_logo align-bottom"
                 />
               </Link>
             </Container>
 
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul id="nav_btn" className="navbar-nav">
-                <li className="nav-item">
-                  <NavLink
-                    reloadDocument
-                    activeclassname="active"
-                    className="nav-link"
-                    aria-current="page"
-                    to="/Dienstleistungen"
-                  >
-                    Dienstleistungen
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    reloadDocument
-                    to="/Mitarbeitende"
-                    activeclassname="active"
-                    className="nav-link "
-                  >
-                    Über uns
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    reloadDocument
-                    to="/Themen"
-                    activeclassname="active"
-                    className="nav-link"
-                  >
-                    Themen
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    reloadDocument
-                    to="/Projekte"
-                    activeclassname="active"
-                    className="nav-link"
-                  >
-                    Projekte
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    reloadDocument
-                    to="/Kontakt"
-                    activeclassname="active"
-                    className="nav-link"
-                  >
-                    Kontakt
-                  </NavLink>
-                </li>
-              </ul>
+            <div className="btn_container">
+              <Button
+                className="navbar-toggler custom-toggler "
+                type="button"
+                onClick={handleShow}
+              >
+                <span className="navbar-toggler-icon"></span>
+              </Button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul id="nav_btn" className="navbar-nav">
+                  <li className="nav-item">
+                    <NavLink
+                      reloadDocument
+                      activeclassname="active"
+                      className="nav-link"
+                      aria-current="page"
+                      to="/Dienstleistungen"
+                    >
+                      Dienstleistungen
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      reloadDocument
+                      to="/Mitarbeitende"
+                      activeclassname="active"
+                      className="nav-link "
+                    >
+                      Über uns
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      reloadDocument
+                      to="/Themen"
+                      activeclassname="active"
+                      className="nav-link"
+                    >
+                      Themen
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      reloadDocument
+                      to="/Projekte"
+                      activeclassname="active"
+                      className="nav-link"
+                    >
+                      Projekte
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      reloadDocument
+                      to="/Kontakt"
+                      activeclassname="active"
+                      className="nav-link"
+                    >
+                      Kontakt
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <Button
-              className="navbar-toggler custom-toggler"
-              type="button"
-              onClick={handleShow}
-            >
-              <span className="navbar-toggler-icon"></span>
-            </Button>
+
             <Modal show={show} onHide={handleClose} className="modal show">
               <Modal.Dialog className="modal-dialog" role="document">
                 <div className="modal-content">

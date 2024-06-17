@@ -30,20 +30,13 @@ const Staffs = () => {
         }}
       ></Container>
       <Container className="categoryTitle">MITARBEITENDE</Container>
-      <Container className={`${styles.staffs_content}`}>
+      <Container>
         <Row className={`${styles.staff_row}`}>
           {staffs.data.map((staff) =>
             staff.title.rendered == "Adrian Vatter" ? (
               ""
             ) : (
-              <Col
-                xl={4}
-                lg={4}
-                md={6}
-                sm={12}
-                className={`${styles.staff_box}`}
-                key={staff.id}
-              >
+              <Col xl={4} lg={4} md={6} sm={12} className="pb-5" key={staff.id}>
                 <Link
                   to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                   state={staff}
@@ -60,7 +53,7 @@ const Staffs = () => {
           )}
         </Row>
       </Container>
-      <Container className="categoryTitle">VERWALTUNGSRAT</Container>
+      {/* <Container className="categoryTitle">VERWALTUNGSRAT</Container>
       <Container className={`${styles.staffs_content}`}>
         <Row className={`${styles.staff_row}`}>
           {staffs.data.map((staff) =>
@@ -68,20 +61,20 @@ const Staffs = () => {
               ""
             ) : (
               <Row key={staff.id} className={`${styles.staff_row}`}>
-                <Col xl={5} className={`${styles.staff_box}`}>
-                  {/* <Link
+                <Col xl={5} lg={12} className={`${styles.staff_box}`}>
+                  <Link
                     to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                     state={staff}
-                  > */}
+                  >
                   <StaffPicComp
                     imgid={staff.acf.imgid}
                     staffName={staff.title.rendered}
                     position={staff.acf.position}
                     id={staff.title.rendered}
                   ></StaffPicComp>
-                  {/* </Link> */}
+                  </Link>
                 </Col>
-                <Col xl={7} className={`my-auto ${styles.staff_box}`}>
+                <Col xl={7} lg={12} className={`my-auto ${styles.staff_box}`}>
                   Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
                   des Verwaltungsrates. Er ist seit 2009 Inhaber des Lehrstuhls
                   für Schweizer Politik am Institut für Politikwissenschaft der
@@ -93,7 +86,7 @@ const Staffs = () => {
             ),
           )}
         </Row>
-      </Container>
+      </Container> */}
       <br />
       <br />
     </div>

@@ -1,12 +1,15 @@
+.pic_container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 10px;
+}
+
 .service_pic {
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     position: relative;
     width: 100%;
+    max-width: 400px;
     height: auto;
     opacity: 1;
     backface-visibility: hidden;
-    margin: auto;
 
 }
 
@@ -17,7 +20,8 @@
 }
 
 .pic_container:hover {
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 2px;
+
 }
 
 .service_pic_caption {

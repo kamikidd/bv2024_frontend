@@ -60,6 +60,8 @@ body {
 
 #root {
     width: 100%;
+    --highlight-color: null;
+
 }
 
 .App {
@@ -94,7 +96,7 @@ body {
 }
 
 .title_pic_content {
-    margin-top: 75px;
+    margin-top: 117px;
 }
 
 .title_pic_content.container-fluid {
@@ -122,11 +124,12 @@ body {
 /*modify bootstrap css*/
 .custom-toggler.navbar-toggler {
     border: 2px solid #C00000;
-    margin-bottom: 8px;
-    margin-top: -30px;
     margin-right: 5px;
     padding: 1px 10px;
-    align-self: flex-end;
+}
+
+.btn_container {
+    align-self: end;
 }
 
 button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
@@ -162,7 +165,6 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     text-align: center;
     font-size: 130%;
     padding: 5px;
-    background-color: rgba(255, 255, 250, 0.97);
 }
 
 .btn-primary:focus {
@@ -210,6 +212,7 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     text-decoration: underline;
 }
 
+/*Service Page Tabs*/
 .nav-pills .nav-link {
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
@@ -217,7 +220,8 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     font-size: 24px;
     font-weight: 500;
     border: #fff;
-    width: 350px;
+    max-width: 350px;
+    width: 100%;
     height: 45px;
     background-color: #ffffff;
     text-align: center;
@@ -273,7 +277,7 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
 }
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-@media (max-width:478.98px) {
+/* @media (max-width:478.98px) {
     .title-pic-content {
         margin-top: 82px;
     }
@@ -298,10 +302,10 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     #contact_addr_title {
         margin-top: 40px;
     }
-}
+} */
 
 /********** Extra small devices only **********/
-@media (min-width:479px) and (max-width: 767.98px) {
+/* @media (min-width:479px) and (max-width: 767.98px) {
     .title_pic_content {
         margin-top: 75px;
     }
@@ -327,10 +331,10 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     #contact_addr_title {
         margin-top: 40px;
     }
-}
+} */
 
 /********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991.98px) {
+/* @media (min-width: 768px) and (max-width: 991.98px) {
     .title_pic_content {
         margin-top: 75px;
     }
@@ -367,10 +371,10 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
         margin-top: 40px;
     }
 
-}
+} */
 
 /********** Medium devices only **********/
-@media (min-width: 992px) and (max-width:1199.98px) {
+/* @media (min-width: 992px) and (max-width:1199.98px) {
     .title-pic-content {
         margin-top: 75px;
     }
@@ -432,4 +436,58 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     .topic-row {
         justify-content: space-around;
     }
+} */
+@media (min-width:1200px)and (max-width:1400.98px) {
+    .main_logo {
+        height: 80px;
+    }
+
+    .side_logo {
+        height: 80px;
+    }
+
+    .title_pic_content {
+        margin-top: 97px;
+    }
+}
+
+@media (min-width:479px)and (max-width:1199.98px) {
+    .main_logo {
+        height: 60px;
+    }
+
+    .side_logo {
+        height: 60px;
+    }
+
+    .title_pic_content {
+        margin-top: 77px;
+    }
+}
+
+@media (max-width:478.98px) {
+    .main_logo {
+        height: 60px;
+    }
+
+    .side_logo {
+        display: none;
+    }
+
+    .title_pic_content {
+        margin-top: 77px;
+    }
+}
+
+/*something is not really needed... but I like it...feel free to comment it out*/
+/*change hightlight text color and bg color*/
+::-moz-selection {
+    /* Code for Firefox */
+    color: rgb(246, 242, 242);
+    background: rgb(177, 57, 13);
+}
+
+::selection {
+    color: rgb(187, 11, 11);
+    background: rgb(238, 220, 213);
 }

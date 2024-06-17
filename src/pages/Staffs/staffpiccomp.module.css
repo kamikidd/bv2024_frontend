@@ -1,6 +1,6 @@
 .staff_pic_container {
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .staff_pic_container:hover img {
@@ -9,10 +9,17 @@
     opacity: 0.95;
 }
 
+.pic {
+    border-bottom: #FFF solid 31px;
+    width: 100%;
+}
+
 .staff_pic {
+    overflow: hidden;
     position: relative;
-    width: 300px;
-    height: 330px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     opacity: 1;
     backface-visibility: hidden;
 }
@@ -71,4 +78,12 @@
     margin-bottom: 0;
     align-items: center;
     display: grid;
+}
+
+@media (max-width:768px) {
+
+    /* .staff_pic_container {
+        width: 300px;
+        margin: auto;
+    } */
 }

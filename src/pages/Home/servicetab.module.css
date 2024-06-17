@@ -3,10 +3,20 @@
 }
 
 .home_service_box {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .home_service_row {
     padding-bottom: 20px;
     --bs-gutter-x: 2.5rem;
+}
+
+@media (min-width:768px) and (width:991.98px) {
+    .home_service_box {
+        margin-bottom: 20px;
+    }
+
+
 }
