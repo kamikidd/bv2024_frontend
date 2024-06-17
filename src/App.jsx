@@ -14,6 +14,8 @@ import DataProtection from "./pages/Others/DataProtection";
 import Header from "./pages/Others/Header";
 import Footer from "./pages/Others/Footer";
 import ProjectDetail from "./pages/Projects/ProjectDetail";
+import ScrollToTop from "../src/pages/Others/ScrollToTop";
+
 const queryClient = new QueryClient({
   defautlOptions: {
     queries: {
@@ -25,7 +27,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <div className="App">
-      <HashRouter>
+      <HashRouter onUpdate={() => window.scrollTo(0, 0)}>
         <QueryClientProvider client={queryClient}>
           <Header></Header>
           <Routes forceRefresh>
@@ -45,6 +47,7 @@ const App = () => {
           </Routes>
           <Footer></Footer>
         </QueryClientProvider>
+        <ScrollToTop />
       </HashRouter>
     </div>
   );
