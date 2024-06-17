@@ -172,19 +172,3 @@ ul.publication_list {
     }
 
 }
-
-@media (max-width:380px) {
-    .publication_list_link {
-        font-size: 16px;
-    }
-
-    .section_box {
-        font-size: 16px;
-    }
-
-    div h2 {
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-    }
-}

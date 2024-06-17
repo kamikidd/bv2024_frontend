@@ -29,10 +29,3 @@
 .selected_projects_list_link:hover {
     color: #C00000;
 }
-
-@media (max-width:380px) {
-    .selected_projects_list_link {
-        font-size: 16px;
-    }
-
-}
