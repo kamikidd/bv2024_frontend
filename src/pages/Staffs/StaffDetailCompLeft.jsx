@@ -11,7 +11,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
         <div>
           <div className={`${styles.staff_name}`}>{staff.title.rendered}</div>
           <div className={`${styles.staff_info}`}>{staff.acf.position}</div>
-          <ul className={`${styles.staff_info_position}`}>
+          <ul className={`${styles.staff_info_position_higher}`}>
             {information.map((line, index) => (
               <ul className={`${styles.info_line}`} key={index}>
                 {line}
@@ -20,7 +20,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
           </ul>
           <div className={`${styles.staff_detail_left_bottom_element}`}>
             <div
-              className={`text_color ${styles.staff_info_position} ${styles.info_link}`}
+              className={`text_color ${styles.staff_info_position_lower} ${styles.info_link}`}
             >
               {/* <img
               src="imgs/symbols/fi_mail.png"
@@ -30,7 +30,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
               {/* todo  */}
               {staff.acf.email}
             </div>
-            <div className={`text_color   ${styles.staff_info_position}`}>
+            <div className={`text_color   ${styles.staff_info_position_lower}`}>
               {/* <img
               src="imgs/symbols/phone.png"
               alt="tel"
@@ -39,7 +39,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
               {staff.acf.telephone}
             </div>
             {staff.acf.linkedin != "" ? (
-              <div className={`text_color ${styles.staff_info_position}`}>
+              <div className={`text_color ${styles.staff_info_position_lower}`}>
                 <a href={staff.acf.linkedin} className={`${styles.info_link}`}>
                   <img
                     src={linkedin_logo}

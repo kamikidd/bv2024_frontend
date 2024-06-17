@@ -32,13 +32,13 @@ const StaffDetail = () => {
 
       <Container>
         <Row>
-          <Col xl={4}>
+          <Col lg={4} md={5}>
             <StaffDetailCompLeft
               staff={staffdetails.data}
               img={media}
             ></StaffDetailCompLeft>
           </Col>
-          <Col xl={8}>
+          <Col lg={8} md={7} xs={12}>
             <StaffDetailCompRight
               staff={staffdetails.data}
             ></StaffDetailCompRight>

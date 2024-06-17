@@ -20,7 +20,7 @@ const SelectedProjectList = (prop) => {
               className={`d-flex justify-content-between ${styles.selected_projects_list}`}
             >
               <ul>
-                <li>
+                <li className={`${styles.text_break}`}>
                   {prop.detail.title.rendered} ({prop.detail.acf.Jahr})
                 </li>
               </ul>
