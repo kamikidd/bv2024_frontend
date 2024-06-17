@@ -36,6 +36,8 @@
 .map {
     /* margin-right: 10vw; */
     margin-bottom: 40px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .contact_info {
@@ -46,4 +48,16 @@
 
 .email_link {
     color: #C00000;
+}
+
+.reverse_row {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media (max-width:992px) {
+    .reverse_row {
+        flex-direction: row;
+    }
+
 }

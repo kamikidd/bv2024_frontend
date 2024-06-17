@@ -139,34 +139,36 @@ const Projects = () => {
       <Container>
         <Row>
           <Col xxl={4}>
-            <SearchInputComp
-              onChange={setTitle}
-              isClear={isClear}
-              isCleared={handleClearStatus}
-            ></SearchInputComp>
-            <br />
+            <div>
+              <SearchInputComp
+                onChange={setTitle}
+                isClear={isClear}
+                isCleared={handleClearStatus}
+              ></SearchInputComp>
+              <br />
 
-            <div className={`${styles.filter_label}`}>
-              Filtern nach Thema:<br></br>
-              <SelectComp
-                isPreSelected={selectedTopic ?? undefined}
-                value={selectedTopic ?? "Alle Themen"}
-                options={topics.data}
-                onChange={handleSelectedTopic}
-                isClear={isClear}
-                isCleared={handleClearStatus}
-              ></SelectComp>
-            </div>
-            <div className={`${styles.filter_label}`}>
-              Filtern nach Dienstleistung:<br></br>
-              <SelectComp
-                isPreSelected={selectedService ?? undefined}
-                value={selectedService ?? "Alle Dienstleistungen"}
-                options={services.data}
-                onChange={handleSelectedService}
-                isClear={isClear}
-                isCleared={handleClearStatus}
-              ></SelectComp>
+              <div className={`${styles.filter_label}`}>
+                Filtern nach Thema:<br></br>
+                <SelectComp
+                  isPreSelected={selectedTopic ?? undefined}
+                  value={selectedTopic ?? "Alle Themen"}
+                  options={topics.data}
+                  onChange={handleSelectedTopic}
+                  isClear={isClear}
+                  isCleared={handleClearStatus}
+                ></SelectComp>
+              </div>
+              <div className={`${styles.filter_label}`}>
+                Filtern nach Dienstleistung:<br></br>
+                <SelectComp
+                  isPreSelected={selectedService ?? undefined}
+                  value={selectedService ?? "Alle Dienstleistungen"}
+                  options={services.data}
+                  onChange={handleSelectedService}
+                  isClear={isClear}
+                  isCleared={handleClearStatus}
+                ></SelectComp>
+              </div>
             </div>
           </Col>
 

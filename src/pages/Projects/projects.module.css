@@ -1,7 +1,6 @@
 .container {
     position: relative;
     font-family: 'Barlow Condensed', sans-serif;
-    width: 100%;
     min-height: 47px;
     color: rgb(0, 0, 0);
     font-size: 24px;
@@ -92,7 +91,8 @@ input[type=text] {
     border: none;
     border-bottom: 1px solid #936464;
     height: 47px;
-    width: 390px;
+    max-width: 390px;
+    width: 100%;
     font-size: 24px;
     font-family: 'Karla', sans-serif;
     font-weight: 300;
