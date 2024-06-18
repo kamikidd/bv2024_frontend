@@ -56,12 +56,12 @@
 body {
     overflow: scroll;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #root {
     width: 100%;
     --highlight-color: null;
-
 }
 
 .App {
@@ -80,6 +80,8 @@ body {
 #logo_nav_container {
     padding-left: 0px;
     padding-right: 0px;
+    display: contents;
+
 }
 
 #nav_btn {
@@ -122,65 +124,21 @@ body {
 }
 
 /*modify bootstrap css*/
-.custom-toggler.navbar-toggler {
+.navbar-light .navbar-toggler {
     border: 2px solid #C00000;
-    margin-right: 5px;
-    padding: 1px 10px;
+    margin-top: 20px;
 }
 
-.btn_container {
-    align-self: end;
-}
-
-button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
-    background-color: rgb(192, 0, 0, 0.1);
-}
-
-.modal-backdrop {
-    z-index: 1;
-}
-
-.btn-primary {
-    color: #000000;
-}
-
-.custom-toggler .navbar-toggler-icon {
+.navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(192,0,0,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
     width: 28px;
 }
 
-.modal-dialog {
-    position: fixed;
-    margin: auto;
-    width: 200px;
-    height: 100%;
-    right: 0px;
+.navbar-light .navbar-toggler:hover {
+    background-color: rgb(192, 0, 0, 0.1);
 }
 
-.modal-content {
-    height: 100%;
-}
-
-.modal-body ul li {
-    text-align: center;
-    font-size: 130%;
-    padding: 5px;
-}
-
-.btn-primary:focus {
-    background-color: #ffffff;
-}
-
-.modalNav {
-    color: #C00000;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.navbar-light .navbar-nav .nav-link {
+.nav-link {
     color: #C00000;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;
@@ -201,6 +159,14 @@ button.navbar-toggler.custom-toggler.btn.btn-primary:hover {
     color: #C00000;
     text-transform: uppercase;
     text-decoration: underline;
+}
+
+.navbar_column {
+    column-gap: 1.25em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #C00000;
 }
 
 .nav-link:hover {
