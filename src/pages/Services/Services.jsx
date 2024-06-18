@@ -37,10 +37,6 @@ const Services = () => {
   const state =
     servicename == null ? services.data[0].title.rendered : servicename;
 
-  const changeStyle = () => {
-    setStyle("btn_active");
-  };
-
   return (
     <div>
       <Container className="categoryTitle">DIENSTLEISTUNGEN</Container>
@@ -56,7 +52,6 @@ const Services = () => {
                     <Nav.Link
                       eventKey={service.title.rendered}
                       className={style}
-                      onClick={() => changeStyle()}
                     >
                       {service.title.rendered}
                     </Nav.Link>

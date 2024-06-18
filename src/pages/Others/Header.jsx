@@ -1,8 +1,6 @@
-import { useState, React } from "react";
+import { React } from "react";
 import Nav from "react-bootstrap/Nav";
-import { NavLink, Link, useLocation } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import { Link, useLocation } from "react-router-dom";
 import TitlePictureComp from "./TitlePictureComp";
 import Container from "react-bootstrap/Container";
 import bv_logo from "../../assets/imgs/logos/bv_logo.svg";
@@ -11,9 +9,6 @@ import { Navbar, Offcanvas } from "react-bootstrap";
 const Header = () => {
   const location = useLocation();
   let page = location.pathname.substring(1);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <Container fluid className="header_container">
