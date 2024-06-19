@@ -81,11 +81,10 @@ body {
     padding-left: 0px;
     padding-right: 0px;
     display: contents;
-
 }
 
-#nav_btn {
-    white-space: nowrap;
+.navbar-brand {
+    /* padding: 0px; */
 }
 
 #logo_img1 {
@@ -98,7 +97,7 @@ body {
 }
 
 .title_pic_content {
-    margin-top: 117px;
+    margin-top: 126px;
 }
 
 .title_pic_content.container-fluid {
@@ -174,10 +173,6 @@ body {
     text-decoration: underline;
 }
 
-.active {
-    text-decoration: underline;
-}
-
 /*Service Page Tabs*/
 .nav-pills .nav-link {
     margin-bottom: 20px;
@@ -200,10 +195,6 @@ body {
 
 }
 
-.tab-content .active {
-    text-decoration: none;
-}
-
 .nav-pills .nav-link.active {
     color: #fff;
     background-color: #C00000;
@@ -221,7 +212,6 @@ body {
     background-color: #C00000;
     text-transform: uppercase;
     font-weight: 600;
-
 }
 
 .text_color {
@@ -249,167 +239,6 @@ body {
     font-weight: 300;
 }
 
-/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-/* @media (max-width:478.98px) {
-    .title-pic-content {
-        margin-top: 82px;
-    }
-
-    #logo_img1 {
-        width: 176px;
-        height: 58px;
-    }
-
-    #logo_img2 {
-        display: none;
-    }
-
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .staff-box {
-        justify-content: center;
-    }
-
-    #contact_addr_title {
-        margin-top: 40px;
-    }
-} */
-
-/********** Extra small devices only **********/
-/* @media (min-width:479px) and (max-width: 767.98px) {
-    .title_pic_content {
-        margin-top: 75px;
-    }
-
-    #logo_img1 {
-        width: 176px;
-        height: 58px;
-    }
-
-    #logo_img2 {
-        width: 155px;
-        height: 40px;
-    }
-
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .staff-box {
-        justify-content: center;
-    }
-
-    #contact_addr_title {
-        margin-top: 40px;
-    }
-} */
-
-/********** Small devices only **********/
-/* @media (min-width: 768px) and (max-width: 991.98px) {
-    .title_pic_content {
-        margin-top: 75px;
-    }
-
-    #logo_img1 {
-        width: 176px;
-        height: 58px;
-    }
-
-    #logo_img2 {
-        width: 155px;
-        height: 40px;
-    }
-
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .service_pic {
-        width: 340px;
-        height: 191px;
-    }
-
-    .service_pic_caption {
-        font-size: 32px;
-    }
-
-    .staff-row {
-        --bs-gutter-x: 4.5rem;
-
-    }
-
-    #contact_addr_title {
-        margin-top: 40px;
-    }
-
-} */
-
-/********** Medium devices only **********/
-/* @media (min-width: 992px) and (max-width:1199.98px) {
-    .title-pic-content {
-        margin-top: 75px;
-    }
-
-    #logo_img1 {
-        width: 176px;
-        height: 58px;
-    }
-
-    #logo_img2 {
-        width: 155px;
-        height: 40px;
-    }
-
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .service_pic {
-        width: 300px;
-        height: 168px;
-    }
-
-    .service_pic_caption {
-        font-size: 28px;
-    }
-
-    .staff-row {
-        --bs-gutter-x: 1rem;
-    }
-}
-
-@media (min-width:1199px) and (max-width:1399.98px) {
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .service_pic {
-        width: 355px;
-        height: 200px;
-    }
-
-    .service_pic_caption {
-        font-size: 32px;
-    }
-
-    .staff-row {
-        padding-bottom: 20px;
-        --bs-gutter-x: 6rem;
-    }
-
-}
-
-@media (min-width:1399px) {
-    .category {
-        margin: 0 auto 20px;
-    }
-
-    .topic-row {
-        justify-content: space-around;
-    }
-} */
 @media (min-width:1200px)and (max-width:1400.98px) {
     .main_logo {
         height: 80px;
@@ -420,7 +249,7 @@ body {
     }
 
     .title_pic_content {
-        margin-top: 97px;
+        margin-top: 106px;
     }
 }
 
@@ -434,7 +263,7 @@ body {
     }
 
     .title_pic_content {
-        margin-top: 77px;
+        margin-top: 86px;
     }
 }
 
@@ -448,7 +277,7 @@ body {
     }
 
     .title_pic_content {
-        margin-top: 77px;
+        margin-top: 86px;
     }
 }
 

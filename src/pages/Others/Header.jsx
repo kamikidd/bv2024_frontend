@@ -1,6 +1,6 @@
-import { React } from "react";
+import { React, useRef } from "react";
 import Nav from "react-bootstrap/Nav";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import TitlePictureComp from "./TitlePictureComp";
 import Container from "react-bootstrap/Container";
 import bv_logo from "../../assets/imgs/logos/bv_logo.svg";
@@ -9,7 +9,13 @@ import { Navbar, Offcanvas } from "react-bootstrap";
 const Header = () => {
   const location = useLocation();
   let page = location.pathname.substring(1);
+  const offCanvasRef = useRef();
 
+  function closeOffCanvas() {
+    if (offCanvasRef.current.backdrop) {
+      offCanvasRef.current.backdrop.click();
+    }
+  }
   return (
     <Container fluid className="header_container">
       <Navbar
@@ -33,48 +39,92 @@ const Header = () => {
                 className="side_logo align-bottom"
               />
             </Link>
-
-            <Navbar.Toggle
-              aria-controls={`offcanvasNavbar-expand-lg`}
-              className="mb-2"
-            />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-lg`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-              placement="end"
-              backDrop="true"
-              className="w-50"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title
-                  id={`offcanvasNavbarLabel-expand-lg`}
-                ></Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body className="justify-content-end mb-2">
-                <Nav className="navbar_column">
-                  <Nav.Link
-                    href="#/Dienstleistungen"
-                    aria-current="page"
-                    reloadDocument
-                  >
-                    Dienstleistungen
-                  </Nav.Link>
-                  <Nav.Link href="#/Mitarbeitende" reloadDocument>
-                    Über uns
-                  </Nav.Link>
-                  <Nav.Link href="#/Themen" reloadDocument>
-                    Themen
-                  </Nav.Link>
-                  <Nav.Link href="#/Projekte" reloadDocument>
-                    Projekte
-                  </Nav.Link>
-                  <Nav.Link href="#/Kontakt" reloadDocument>
-                    Kontakt
-                  </Nav.Link>
-                </Nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
           </Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls="offcanvasNavbar-expand-lg"
+            className="mb-2"
+          />
+
+          <Navbar.Offcanvas
+            id="offcanvasNavbar-expand-lg"
+            aria-labelledby="offcanvasNavbar-expand-lg"
+            placement="end"
+            className="w-50"
+            ref={offCanvasRef}
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id="offcanvasNavbar-expand-lg"></Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body className="justify-content-end mb-2">
+              <Nav className="navbar_column nav-item">
+                {/* <Nav.Link
+                  href="#/Dienstleistungen"
+                  aria-current="page"
+                  reloaddocument="true"
+                >
+                  Dienstleistungen
+                </Nav.Link>
+                <Nav.Link href="#/Mitarbeitende" reloaddocument="true">
+                  Über uns
+                </Nav.Link>
+                <Nav.Link href="#/Themen" reloaddocument="true">
+                  Themen
+                </Nav.Link>
+                <Nav.Link href="#/Projekte" reloaddocument="true">
+                  Projekte
+                </Nav.Link>
+                <Nav.Link href="#/Kontakt" reloaddocument="true">
+                  Kontakt
+                </Nav.Link> */}
+
+                <NavLink
+                  reloaddocument="true"
+                  className="nav-link"
+                  aria-current="page"
+                  to="/Dienstleistungen"
+                  onClick={closeOffCanvas}
+                >
+                  Dienstleistungen
+                </NavLink>
+
+                <NavLink
+                  reloaddocument="true"
+                  to="/Mitarbeitende"
+                  className="nav-link"
+                  onClick={closeOffCanvas}
+                >
+                  Über uns
+                </NavLink>
+
+                <NavLink
+                  reloaddocument="true"
+                  to="/Themen"
+                  className="nav-link"
+                  onClick={closeOffCanvas}
+                >
+                  Themen
+                </NavLink>
+
+                <NavLink
+                  reloaddocument="true"
+                  to="/Projekte"
+                  className="nav-link"
+                  onClick={closeOffCanvas}
+                >
+                  Projekte
+                </NavLink>
+
+                <NavLink
+                  reloaddocument="true"
+                  to="/Kontakt"
+                  className="nav-link"
+                  onClick={closeOffCanvas}
+                >
+                  Kontakt
+                </NavLink>
+              </Nav>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
         </Container>
       </Navbar>
 

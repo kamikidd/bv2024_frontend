@@ -16,7 +16,6 @@ const Services = () => {
   // const param = useParams();
   const location = useLocation();
   const servicename = location.state;
-  console.log(servicename);
 
   const navigate = useNavigate();
   const [style, setStyle] = useState("btn_active");
