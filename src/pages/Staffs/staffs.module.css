@@ -10,18 +10,20 @@
 
 }
 
-.staffs_content {
-    margin-top: 20px;
+/*"staff_row" keep for gutter-x */
+/* .staff_row {} */
+.funder_row {
+    --bs-gutter-x: 0px;
 }
 
-.staff_box {
+.funder_col {
+    margin-bottom: 0px;
     display: flex;
-    padding-bottom: 60px;
-    justify-content: center;
+    padding-left: 0px;
 }
 
-.staff_row {
-    padding-bottom: 20px;
+.funder_info {
+    padding-left: 0px;
 }
 
 /*StaffDetail*/
@@ -166,9 +168,22 @@ ul.publication_list {
     color: #C00000;
 }
 
-@media (min-width:1280px) {
+@media (min-width:1400px) {
     .staff_row {
         --bs-gutter-x: 11rem;
+    }
+
+}
+
+@media (max-width:1400px) {
+    .funder_col {
+
+        justify-content: center;
+    }
+
+    .funder_info {
+        margin-top: 20px;
+        padding-left: 25px;
     }
 
 }

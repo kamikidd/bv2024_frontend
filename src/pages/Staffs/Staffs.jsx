@@ -53,40 +53,44 @@ const Staffs = () => {
           )}
         </Row>
       </Container>
-      {/* <Container className="categoryTitle">VERWALTUNGSRAT</Container>
-      <Container className={`${styles.staffs_content}`}>
-        <Row className={`${styles.staff_row}`}>
+      <Container className="categoryTitle">VERWALTUNGSRAT</Container>
+      <Container className="mb-3">
+        <Row className={`${styles.funder_row}`}>
           {staffs.data.map((staff) =>
             staff.title.rendered != "Adrian Vatter" ? (
               ""
             ) : (
-              <Row key={staff.id} className={`${styles.staff_row}`}>
-                <Col xl={5} lg={12} className={`${styles.staff_box}`}>
+              <Row key={staff.id} className="px-0 mx-0">
+                <Col lg={4} md={6} className={`${styles.funder_col}`}>
                   <Link
                     to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
                     state={staff}
                   >
-                  <StaffPicComp
-                    imgid={staff.acf.imgid}
-                    staffName={staff.title.rendered}
-                    position={staff.acf.position}
-                    id={staff.title.rendered}
-                  ></StaffPicComp>
+                    <StaffPicComp
+                      imgid={staff.acf.imgid}
+                      staffName={staff.title.rendered}
+                      position={staff.acf.position}
+                      id={staff.title.rendered}
+                    ></StaffPicComp>
                   </Link>
                 </Col>
-                <Col xl={7} lg={12} className={`my-auto ${styles.staff_box}`}>
-                  Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
-                  des Verwaltungsrates. Er ist seit 2009 Inhaber des Lehrstuhls
-                  für Schweizer Politik am Institut für Politikwissenschaft der
-                  Universität Bern. Seit 1994 hat er für diverse Stellen der
-                  Bundesverwaltung sowie für kantonale und kommunale Behörden
-                  zahlreiche Forschungs- und Beratungsmandate wahrgenommen.
+                <Col lg={8} md={6} className={`my-auto ${styles.about} `}>
+                  <p className={`${styles.funder_info}`}>
+                    Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
+                    des Verwaltungsrates. Er ist seit 2009 Inhaber des
+                    Lehrstuhls für Schweizer Politik am Institut für
+                    Politikwissenschaft der Universität Bern. Seit 1994 hat er
+                    für diverse Stellen der Bundesverwaltung sowie für kantonale
+                    und kommunale Behörden zahlreiche Forschungs- und
+                    Beratungsmandate wahrgenommen.
+                  </p>
                 </Col>
               </Row>
             ),
           )}
         </Row>
-      </Container> */}
+      </Container>
+
       <br />
       <br />
     </div>
