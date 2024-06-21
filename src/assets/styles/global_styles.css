@@ -218,6 +218,21 @@ body {
     color: #C00000;
 }
 
+/*project page search input text*/
+input#titleName {
+    border: none;
+    height: 47px;
+    font-size: 24px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 300;
+    color: #525151;
+    width: 85%;
+}
+
+input#titleName:focus {
+    outline: none;
+}
+
 /*SelectedProjectComp*/
 .list_element {
     display: flex;

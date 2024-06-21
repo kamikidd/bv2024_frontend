@@ -138,15 +138,14 @@ const Projects = () => {
 
       <Container>
         <Row>
-          <Col xxl={4}>
-            <div>
+          <Col lg={4}>
+            <Row className={`${styles.left_side}`}>
               <SearchInputComp
                 onChange={setTitle}
                 isClear={isClear}
                 isCleared={handleClearStatus}
               ></SearchInputComp>
               <br />
-
               <div className={`${styles.filter_label}`}>
                 Filtern nach Thema:<br></br>
                 <SelectComp
@@ -169,10 +168,10 @@ const Projects = () => {
                   isCleared={handleClearStatus}
                 ></SelectComp>
               </div>
-            </div>
+            </Row>
           </Col>
 
-          <Col xxl={8} xl={12}>
+          <Col lg={8}>
             <div
               className={`${styles.container} 
                   ${result.length == projects.data.length ? "" : styles.withbtn}
