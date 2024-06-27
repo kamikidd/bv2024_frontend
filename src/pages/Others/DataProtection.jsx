@@ -7,7 +7,7 @@ const DateProtection = () => {
       <Container className="categoryTitle">Datenschutzerklärung</Container>
       <Container>
         <div>
-          <p className={`${styles.content_data_protection}`}>
+          <p className={`${styles.contact_info}`}>
             <b></b>
             <br></br>
             <div className={`${styles.title_data_protection}`}>

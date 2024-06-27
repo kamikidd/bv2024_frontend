@@ -24,7 +24,9 @@ const StaffDetailCompLeft = ({ staff, img }) => {
             >
               <a href={`mailto:${staff.acf.email}`}>{staff.acf.email}</a>
             </div>
-            <div className={`text_color   ${styles.staff_info_position_lower}`}>
+            <div
+              className={`text_color   ${styles.staff_info_position_lower} ${styles.info_link}`}
+            >
               <a href={`tel:${staff.acf.telephone}`}>{staff.acf.telephone}</a>
             </div>
             {staff.acf.linkedin != "" ? (

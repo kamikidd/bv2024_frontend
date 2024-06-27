@@ -46,6 +46,11 @@
     font-weight: 300;
 }
 
+.text_underline {
+    color: #C00000;
+    text-decoration: underline;
+}
+
 .email_link {
     color: #C00000;
 }
@@ -61,11 +66,6 @@
     font-weight: 500;
 }
 
-.content_data_protection {
-    font-family: 'Karla', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-}
 
 .email_data_protection {
     font-family: 'Barlow Condensed', sans-serif;

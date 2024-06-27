@@ -6,7 +6,7 @@ const Imprint = () => {
     <div>
       <Container className="categoryTitle">IMPRESSUM</Container>;
       <Container>
-        <div className={`${styles.contact_company_name}`}>
+        <div className={`${styles.title_data_protection}`}>
           Büro Vatter AG
           <br></br>
           Politikforschung & -beratung
