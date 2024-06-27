@@ -22,21 +22,10 @@ const StaffDetailCompLeft = ({ staff, img }) => {
             <div
               className={`text_color ${styles.staff_info_position_lower} ${styles.info_link}`}
             >
-              {/* <img
-              src="imgs/symbols/fi_mail.png"
-              alt="email"
-              className="symbols_small"
-            /> */}
-              {/* todo  */}
-              {staff.acf.email}
+              <a href={`mailto:${staff.acf.email}`}>{staff.acf.email}</a>
             </div>
             <div className={`text_color   ${styles.staff_info_position_lower}`}>
-              {/* <img
-              src="imgs/symbols/phone.png"
-              alt="tel"
-              className="symbols_small"
-            /> */}
-              {staff.acf.telephone}
+              <a href={`tel:${staff.acf.telephone}`}>{staff.acf.telephone}</a>
             </div>
             {staff.acf.linkedin != "" ? (
               <div className={`text_color ${styles.staff_info_position_lower}`}>

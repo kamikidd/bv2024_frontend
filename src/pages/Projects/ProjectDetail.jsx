@@ -17,13 +17,7 @@ const ProjectDetail = () => {
       <Container className="categoryTitle">PROJEKTE</Container>
 
       <Container>
-        <Row>
-          <Col xl={4}>
-            <div className={`${styles.back_btn_projectdetail} text_color`}>
-              <Link to="/Projekte">Zurück zur Übersicht</Link>
-            </div>
-          </Col>
-
+        <Row className={`${styles.reverse_row}`}>
           <Col xl={8}>
             <Row>
               <Col className={`${styles.project_detail_title}`}>
@@ -121,6 +115,11 @@ const ProjectDetail = () => {
                 </Col>
               </Row>
             ) : null}
+          </Col>
+          <Col xl={4}>
+            <div className={`${styles.back_btn_projectdetail} text_color`}>
+              <Link to="/Projekte">Zurück zur Übersicht</Link>
+            </div>
           </Col>
         </Row>
       </Container>

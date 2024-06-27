@@ -37,7 +37,6 @@
 
 .page_num_color {
     color: #C00000;
-    text-decoration: underline;
 }
 
 .page_number_row {
@@ -248,6 +247,11 @@ a.download_list {
 .sep {
     margin-top: 0;
     margin-bottom: 40px;
+}
+
+.reverse_row {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @media (max-width:576px) {

@@ -16,7 +16,7 @@ const Contact = () => {
           <Col xl={5} lg={4} xs={12}>
             <div>
               <div>
-                <div className={`${styles.contact_company_name}`}>
+                <div  className={`${styles.contact_company_name}`}>
                   Büro Vatter AG <br></br> Politikanalyse
                 </div>
                 <div className={`${styles.contact_info}`}>
