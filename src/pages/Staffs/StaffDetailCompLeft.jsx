@@ -55,7 +55,7 @@ const StaffDetailCompLeft = ({ staff, img }) => {
         </div>
 
         <div className={`text_color ${styles.back_btn}`}>
-          <Link to="/Mitarbeitende">ZURÜCK</Link>
+          <Link to="/Mitarbeitende">Zurück zur Übersicht</Link>
         </div>
       </div>
       <br />

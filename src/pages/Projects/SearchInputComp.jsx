@@ -30,7 +30,7 @@ const SearchInputComp = ({ onChange, isClear, isCleared }) => {
     }
   }, [isClear, isCleared]);
   return (
-    <div>
+    <div className="p-0">
       <label htmlFor="titleName" className={`${styles.search_label}`}>
         <div className={`${styles.clear_input_container}`}>
           <input

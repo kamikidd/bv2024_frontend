@@ -17,9 +17,11 @@
 }
 
 .funder_col {
-    margin-bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     padding-left: 0px;
+    padding-right: 0px;
 }
 
 .funder_info {

@@ -20,7 +20,7 @@ const ProjectDetail = () => {
         <Row>
           <Col xl={4}>
             <div className={`${styles.back_btn_projectdetail} text_color`}>
-              <Link to="/Projekte">ZURÜCK</Link>
+              <Link to="/Projekte">Zurück zur Übersicht</Link>
             </div>
           </Col>
 

@@ -56,27 +56,7 @@ const Header = () => {
               <Offcanvas.Title id="offcanvasNavbar-expand-lg"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className="justify-content-end mb-2">
-              <Nav className="navbar_column nav-item">
-                {/* <Nav.Link
-                  href="#/Dienstleistungen"
-                  aria-current="page"
-                  reloaddocument="true"
-                >
-                  Dienstleistungen
-                </Nav.Link>
-                <Nav.Link href="#/Mitarbeitende" reloaddocument="true">
-                  Über uns
-                </Nav.Link>
-                <Nav.Link href="#/Themen" reloaddocument="true">
-                  Themen
-                </Nav.Link>
-                <Nav.Link href="#/Projekte" reloaddocument="true">
-                  Projekte
-                </Nav.Link>
-                <Nav.Link href="#/Kontakt" reloaddocument="true">
-                  Kontakt
-                </Nav.Link> */}
-
+              <Nav className="navbar_column nav-item">            
                 <NavLink
                   reloaddocument="true"
                   className="nav-link"
