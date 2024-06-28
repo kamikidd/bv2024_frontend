@@ -8,7 +8,6 @@ import download_symbol from "../../assets/imgs/symbols/download.png";
 import styles from "./projects.module.css";
 
 const DownloadPDF = (prop) => {
-  console.log(prop.prop);
   const navigate = useNavigate();
 
   const downloads_1 = useQuery(
@@ -22,7 +21,6 @@ const DownloadPDF = (prop) => {
   if (downloads_1.isError) {
     navigate("/NotMatch404");
   }
-  console.log(downloads_1.data.source_url);
   return (
     <div>
       <Row>
