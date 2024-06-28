@@ -16,7 +16,7 @@ const fetchData = async ({ queryKey }) => {
   //query all projects for Projects page
   if (taxonomy == "" && data == "projekte") {
     apiRes = await fetch(
-      `${baseurl}/${data}?per_page=${perPage}&page=${currentPage}`
+      `${baseurl}/${data}?per_page=${perPage}&page=${currentPage}`,
     );
     posts = await apiRes.json();
     allPosts = allPosts.concat(posts);
@@ -24,7 +24,7 @@ const fetchData = async ({ queryKey }) => {
     while (Math.floor(amount - perPage * currentPage) > 0) {
       currentPage++;
       apiRes = await fetch(
-        `${baseurl}/${data}?per_page=${perPage}&page=${currentPage}`
+        `${baseurl}/${data}?per_page=${perPage}&page=${currentPage}`,
       );
       posts = await apiRes.json();
       allPosts = allPosts.concat(posts);
@@ -37,9 +37,10 @@ const fetchData = async ({ queryKey }) => {
     //query projects per topic or other taxonomy
     if (data == "media") {
       apiRes = await fetch(`${baseurl}/${data}/${taxonomy}`);
+      console.log(`${baseurl}/${data}/${taxonomy}`);
     } else {
       apiRes = await fetch(
-        `${baseurl}/${data}?per_page=${perPage}&${taxonomy}`
+        `${baseurl}/${data}?per_page=${perPage}&${taxonomy}`,
       );
     }
 

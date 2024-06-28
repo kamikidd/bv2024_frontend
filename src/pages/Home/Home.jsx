@@ -32,9 +32,9 @@ const Home = () => {
         }}
       ></Container>
       <Container className="categoryTitle">DIENSTLEISTUNGEN</Container>
-      {/* <Container>
+      <Container>
         <ServiceTab props={services}></ServiceTab>
-      </Container> */}
+      </Container>
       <Container className="categoryTitle">AKTUELLES</Container>
       <Container>
         <NewsComp></NewsComp>
