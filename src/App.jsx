@@ -30,24 +30,32 @@ const App = () => {
       <HashRouter onUpdate={() => window.scrollTo(0, 0)}>
         <QueryClientProvider client={queryClient}>
           <Header></Header>
-          <Routes forceRefresh>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/Dienstleistungen" element={<Services />}></Route>
-            <Route path="/Dienstleistungen/:id" element={<Services />}></Route>
-            <Route path="/Mitarbeitende" element={<Staffs />}></Route>
-            <Route path="/Mitarbeitende/:id" element={<StaffDetail />} />
-            <Route path="/Themen" element={<Topics />}></Route>
-            <Route path="/Projekte" element={<Projects />}></Route>
-            <Route path="/Projekte/:id" element={<Projects />}></Route>
-            <Route
-              path="/Projekte/Projekt/:title"
-              element={<ProjectDetail />}
-            ></Route>
-            <Route path="/Kontakt" element={<Contact />}></Route>
-            <Route path="/Imprint" element={<Imprint />}></Route>
-            <Route path="/DataProtection" element={<DataProtection />}></Route>
-            <Route path="*" element={<NoMatch404 />}></Route>
-          </Routes>
+          <div className="main">
+            <Routes forceRefresh>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/Dienstleistungen" element={<Services />}></Route>
+              <Route
+                path="/Dienstleistungen/:id"
+                element={<Services />}
+              ></Route>
+              <Route path="/Mitarbeitende" element={<Staffs />}></Route>
+              <Route path="/Mitarbeitende/:id" element={<StaffDetail />} />
+              <Route path="/Themen" element={<Topics />}></Route>
+              <Route path="/Projekte" element={<Projects />}></Route>
+              <Route path="/Projekte/:id" element={<Projects />}></Route>
+              <Route
+                path="/Projekte/Projekt/:title"
+                element={<ProjectDetail />}
+              ></Route>
+              <Route path="/Kontakt" element={<Contact />}></Route>
+              <Route path="/Imprint" element={<Imprint />}></Route>
+              <Route
+                path="/DataProtection"
+                element={<DataProtection />}
+              ></Route>
+              <Route path="*" element={<NoMatch404 />}></Route>
+            </Routes>
+          </div>
           <Footer></Footer>
         </QueryClientProvider>
         <ScrollToTop />

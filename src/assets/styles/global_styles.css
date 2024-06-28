@@ -71,6 +71,10 @@ body {
     flex-direction: column;
 }
 
+.main {
+    flex: 1;
+}
+
 /*HEADER*/
 .header_container {
     padding-left: 0px;
@@ -252,6 +256,24 @@ input#titleName:focus {
     font-size: 1em;
     font-family: 'Karla', sans-serif;
     font-weight: 300;
+}
+
+.error_pic_container {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.error_pic_message {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.error_pic {
+    height: 450px;
+    width: 100%;
 }
 
 @media (min-width:1200px)and (max-width:1400.98px) {
