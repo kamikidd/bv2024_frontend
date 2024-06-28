@@ -32,22 +32,22 @@ const Home = () => {
         }}
       ></Container>
       <Container className="categoryTitle">DIENSTLEISTUNGEN</Container>
-      <Container>
+      {/* <Container>
         <ServiceTab props={services}></ServiceTab>
-      </Container>
+      </Container> */}
       <Container className="categoryTitle">AKTUELLES</Container>
       <Container>
         <NewsComp></NewsComp>
       </Container>
 
-      {/* <Container>
+      <Container>
         <Link to="/Projekte/laufend" className={`${styles.current_projects}`}>
           <span>
             Laufende Projekte
             <img src={symbol_goto} alt="Laufende Projekte" height="24px"></img>
           </span>
         </Link>
-      </Container> */}
+      </Container>
     </div>
   );
 };
