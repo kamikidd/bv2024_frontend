@@ -2,7 +2,6 @@ import { useFetchMedia } from "../../utils/useFetchMedia";
 import styles from "./servicepiccomp.module.css";
 const ServicePicComp = ({ imgid, picName }) => {
   const media = useFetchMedia(imgid, "imgs/category/forschung.png");
-
   return (
     <div className={`${styles.pic_container}`}>
       <div className={`${styles.service_pic}`}>

@@ -13,6 +13,7 @@ export function useFetchMedia(imgid, default_media) {
     navigate("/NotMatch404");
   }
   let image = pic.data.source_url;
+  console.log(image);
   if (image) {
     media = image;
   }
