@@ -40,14 +40,14 @@ const Home = () => {
         <NewsComp></NewsComp>
       </Container>
 
-      <Container>
+      {/* <Container>
         <Link to="/Projekte/laufend" className={`${styles.current_projects}`}>
           <span>
             Laufende Projekte
             <img src={symbol_goto} alt="Laufende Projekte" height="24px"></img>
           </span>
         </Link>
-      </Container>
+      </Container> */}
     </div>
   );
 };
