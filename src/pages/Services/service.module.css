@@ -43,9 +43,13 @@
     margin-top: 40px;
 }
 
-@media (min-width: 320px) and (max-width: 991.98px) {
+@media (min-width: 320px) and (max-width: 1199.98px) {
     .service_paragraph_spacing {
         margin-top: 20px;
+    }
+
+    .service_content {
+        margin-top: 40px;
     }
 
 }

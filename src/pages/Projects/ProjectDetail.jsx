@@ -117,7 +117,7 @@ const ProjectDetail = () => {
           </Col>
           <Col xl={4}>
             <div className={`${styles.back_btn_projectdetail} text_color`}>
-              <Link to="/Projekte">Zurück zur Übersicht</Link>
+              <Link to="/Projekte">Alle Projekte anzeigen</Link>
             </div>
           </Col>
         </Row>
