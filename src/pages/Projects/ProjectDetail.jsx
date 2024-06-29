@@ -11,7 +11,6 @@ const ProjectDetail = () => {
   const detail = state.acf;
   const partners = detail.kooperationspartner.split("\r\n");
   const methods = detail.vorgehenmethoden.split("\r\n");
-  console.log(state);
   return (
     <div>
       <Container className="categoryTitle">PROJEKTE</Container>
