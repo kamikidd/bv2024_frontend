@@ -4,7 +4,7 @@ import styles from "../Contact/contact.module.css";
 const Imprint = () => {
   return (
     <div>
-      <Container className="categoryTitle">IMPRESSUM</Container>;
+      <Container className="categoryTitle">IMPRESSUM</Container>
       <Container>
         <div className={`${styles.title_data_protection}`}>
           Büro Vatter AG
