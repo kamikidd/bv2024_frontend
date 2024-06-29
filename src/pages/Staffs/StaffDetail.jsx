@@ -14,7 +14,7 @@ const StaffDetail = () => {
   const location = useLocation();
   const state = location.state;
   const navigate = useNavigate();
-  const media = useFetchMedia(state.acf.imgid, unknownstaff_pic);
+  const media = useFetchMedia(state.acf.imgid);
   const staffdetails = useQuery(
     ["staffdetails", `mitarbeitende/${state.id}`, ""],
     fetchData,
@@ -35,7 +35,7 @@ const StaffDetail = () => {
           <Col lg={4} md={5}>
             <StaffDetailCompLeft
               staff={staffdetails.data}
-              img={media}
+              img={media ?? unknownstaff_pic}
             ></StaffDetailCompLeft>
           </Col>
           <Col lg={8} md={7} xs={12}>

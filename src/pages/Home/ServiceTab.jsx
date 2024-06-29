@@ -5,7 +5,6 @@ import ServicePicComp from "./ServicePicComp";
 import { Link } from "react-router-dom";
 import styles from "./servicetab.module.css";
 const ServiceTab = ({ props }) => {
-  console.log(props);
   return (
     <Container className={`${styles.home_service_content}`}>
       <Row className={`${styles.home_service_row}`}>
