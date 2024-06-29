@@ -1,12 +1,13 @@
-import Spinner from "../Others/Spinner";
-import styles from "./servicepiccomp.module.css";
 import { useNavigate } from "react-router-dom";
-import forschung_pic from "../../assets/imgs/category/forschung.png";
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
+import Spinner from "../Others/Spinner";
+import styles from "./servicepiccomp.module.css";
+import forschung_pic from "../../assets/imgs/category/forschung.png";
+
 const ServicePicComp = ({ imgid, picName }) => {
   const navigate = useNavigate();
-  const media = useQuery(["media_pic", `media`, imgid], fetchData);
+  const media = useQuery(["service_pic", `media`, imgid], fetchData);
   if (media.isLoading) {
     return <Spinner></Spinner>;
   }

@@ -7,19 +7,23 @@ import fetchData from "../../utils/fetchData";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Spinner from "../Others/Spinner";
-import { useFetchMedia } from "../../utils/useFetchMedia";
 import unknownstaff_pic from "../../assets/imgs/staffs/unknown.png";
 
 const StaffDetail = () => {
   const location = useLocation();
   const state = location.state;
   const navigate = useNavigate();
-  const media = useFetchMedia(state.acf.imgid);
+  const media = useQuery(["service_pic", `media`, state.acf.imgid], fetchData);
   const staffdetails = useQuery(
     ["staffdetails", `mitarbeitende/${state.id}`, ""],
     fetchData,
   );
-
+  if (media.isLoading) {
+    return <Spinner></Spinner>;
+  }
+  if (media.isError) {
+    navigate("/NotMatch404");
+  }
   if (staffdetails.isLoading) {
     return <Spinner></Spinner>;
   }
@@ -35,7 +39,7 @@ const StaffDetail = () => {
           <Col lg={4} md={5}>
             <StaffDetailCompLeft
               staff={staffdetails.data}
-              img={media ?? unknownstaff_pic}
+              img={media.data.source_url ?? unknownstaff_pic}
             ></StaffDetailCompLeft>
           </Col>
           <Col lg={8} md={7} xs={12}>
