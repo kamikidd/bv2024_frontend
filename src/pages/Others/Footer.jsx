@@ -28,7 +28,7 @@ const Footer = () => {
           <section
             className={`col-xxl-3 text-xxl-start text-nowrap ${styles.copyright}`}
           >
-            © 2023 Büro Vatter
+            © 2024 Büro Vatter
           </section>
         </div>
       </Container>
