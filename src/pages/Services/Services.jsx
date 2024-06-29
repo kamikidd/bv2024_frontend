@@ -8,17 +8,14 @@ import ShowServiceInfo from "./ShowServiceInfo";
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
 import { projectIdFetching } from "../../utils/helpers";
 import Spinner from "../Others/Spinner";
 import styles from "./service.module.css";
 const Services = () => {
-  // const param = useParams();
   const location = useLocation();
   const servicename = location.state;
 
   const navigate = useNavigate();
-  const [style, setStyle] = useState("btn_active");
   const services = useQuery(["services", "dienstleistungen", ""], fetchData);
   const targetedCaterogy = useQuery(
     ["showonservicepage", "isshownonserviceinfopage", ""],
@@ -32,9 +29,7 @@ const Services = () => {
     navigate("/NotMatch404");
   }
   let id = projectIdFetching(targetedCaterogy.data, "Ja");
-  // const state = param.id == null ? services.data[0].title.rendered : param.id;
-  const state =
-    servicename == null ? services.data[0].title.rendered : servicename;
+  const state = servicename ?? services.data[0].title.rendered;
 
   return (
     <div>
@@ -48,10 +43,7 @@ const Services = () => {
               <Nav variant="pills" className="flex-column">
                 {services.data.map((service) => (
                   <Nav.Item key={service.id}>
-                    <Nav.Link
-                      eventKey={service.title.rendered}
-                      className={style}
-                    >
+                    <Nav.Link eventKey={service.title.rendered}>
                       {service.title.rendered}
                     </Nav.Link>
                   </Nav.Item>

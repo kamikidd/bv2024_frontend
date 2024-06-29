@@ -1,13 +1,30 @@
 import linkedin_logo from "../../assets/imgs/logos/linkedIn_logo_s.png";
 import { Link } from "react-router-dom";
 import styles from "./staffs.module.css";
+import { useQuery } from "@tanstack/react-query";
+import fetchData from "../../utils/fetchData";
+import Spinner from "../Others/Spinner";
+import { useNavigate } from "react-router-dom";
 
-const StaffDetailCompLeft = ({ staff, img }) => {
+import unknownstaff_pic from "../../assets/imgs/staffs/unknown.png";
+const StaffDetailCompLeft = ({ staff }) => {
+  const navigate = useNavigate();
   const information = staff.acf.otherInfo.split("\r\n");
+  const media = useQuery(["staff_pic", `media`, staff.acf.imgid], fetchData);
+  if (media.isLoading) {
+    return <Spinner></Spinner>;
+  }
+  if (media.isError) {
+    navigate("/NotMatch404");
+  }
   return (
     <div>
       <div className={`${styles.staff_left_box}`}>
-        <img className={`${styles.staff_detail_pic}`} src={img} alt="staff" />
+        <img
+          className={`${styles.staff_detail_pic}`}
+          src={media.data.source_url ?? unknownstaff_pic}
+          alt="staff"
+        />
         <div>
           <div className={`${styles.staff_name}`}>{staff.title.rendered}</div>
           <div className={`${styles.staff_info}`}>{staff.acf.position}</div>

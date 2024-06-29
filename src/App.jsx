@@ -34,12 +34,11 @@ const App = () => {
             <Routes forceRefresh>
               <Route path="/" element={<Home />}></Route>
               <Route path="/Dienstleistungen" element={<Services />}></Route>
-              <Route
-                path="/Dienstleistungen/:id"
-                element={<Services />}
-              ></Route>
               <Route path="/Mitarbeitende" element={<Staffs />}></Route>
-              <Route path="/Mitarbeitende/:id" element={<StaffDetail />} />
+              <Route
+                path="/Mitarbeitende/:name/:id"
+                element={<StaffDetail />}
+              />
               <Route path="/Themen" element={<Topics />}></Route>
               <Route path="/Projekte" element={<Projects />}></Route>
               <Route path="/Projekte/:id" element={<Projects />}></Route>

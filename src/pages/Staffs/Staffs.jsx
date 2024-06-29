@@ -38,8 +38,7 @@ const Staffs = () => {
             ) : (
               <Col xl={4} lg={4} md={6} sm={12} className="pb-5" key={staff.id}>
                 <Link
-                  to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
-                  state={staff}
+                  to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}/${staff.id}`}
                 >
                   <StaffPicComp
                     imgid={staff.acf.imgid}
@@ -63,8 +62,7 @@ const Staffs = () => {
               <Row key={staff.id} className="px-0 mx-0">
                 <Col lg={4} md={6} className={`${styles.funder_col}`}>
                   <Link
-                    to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}`}
-                    state={staff}
+                    to={`/Mitarbeitende/${deUmlaut(staff.title.rendered)}/${staff.id}`}
                   >
                     <StaffPicComp
                       imgid={staff.acf.imgid}
