@@ -228,7 +228,7 @@ input#titleName {
     height: 47px;
     font-size: 24px;
     font-family: 'Karla', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     color: #525151;
     width: 85%;
 }
@@ -238,14 +238,14 @@ input#titleName:focus {
 }
 
 /*SelectedProjectComp*/
-.list_element {
+/* .list_element {
     display: flex;
     justify-content: space-between;
     color: #000000;
     font-size: 20px;
     font-family: 'Karla', sans-serif;
-    font-weight: 300;
-}
+    font-weight: 400;
+} */
 
 .symbol {
     width: 90%;
@@ -255,7 +255,7 @@ input#titleName:focus {
     color: #525151;
     font-size: 1em;
     font-family: 'Karla', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .error_pic_container {
