@@ -6,6 +6,7 @@
     font-size: 24px;
     font-weight: 500;
     text-align: center;
+    align-items: center;
 }
 
 .container.withbtn {
@@ -18,21 +19,45 @@
     background-color: rgb(110, 17, 17);
 }
 
-.resetBtn {
-    background: none;
-    font-family: 'Barlow Condensed', sans-serif;
-    color: #c00000;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: 500;
-    text-decoration: underline;
+.reset_btn {
+    border: 2px solid transparent;
+    background-color: white;
     display: none;
 }
 
-.resetBtn.show {
+.reset_btn_text {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #c00000;
+    font-size: 24px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.reset_btn:hover {
+    border-bottom: 2px solid #C00000;
+}
+
+.reset_btn.show {
     display: block;
+}
+
+.back_to_project_btn {
+    border: 2px solid transparent;
+    background-color: white;
+}
+
+.back_to_project_btn_text {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #c00000;
+    font-size: 24px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.back_to_project_btn:hover {
+    border-bottom: 2px solid #C00000;
 }
 
 .page_num_color {
@@ -121,7 +146,7 @@
 
 .clear_search {
     position: absolute;
-    right: 15px;
+    right: 22px;
     top: -10px;
     bottom: 0px;
     /* button appearane */
@@ -252,6 +277,13 @@ a.download_list {
 .reverse_row {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.no_project_msg {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #C00000;
 }
 
 @media (max-width:576px) {

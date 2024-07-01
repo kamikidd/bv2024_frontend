@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
 import styles from "./newscomp.module.css";
+import { formatDate } from "../../utils/helpers";
 const NewsComp = () => {
   const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ const NewsComp = () => {
         <div key={artikel.id}>
           <div className={`${styles.news_title}`}>{artikel.title.rendered}</div>
           <div className={`${styles.news_date}`}>
-            {artikel.date.slice(0, 10)}
+            {formatDate(artikel.date.slice(0, 10))}
           </div>
           <div
             className={`${styles.news_content}`}

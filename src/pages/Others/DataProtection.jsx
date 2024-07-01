@@ -22,7 +22,7 @@ const DateProtection = () => {
             Schweiz
             <br></br>
             <span className={`${styles.email_data_protection}`}>E-Mail</span>:
-            info@buerovatter.ch
+            <a href={`mailto:info@buerovatter.ch`}>info@buerovatter.ch</a>
             <br></br> <br></br>
             <div className={`${styles.title_data_protection}`}>
               Vertretungsberechtigte Person
@@ -40,9 +40,9 @@ const DateProtection = () => {
             </div>
             Christian Rüefli
             <br></br>
-            Tel +(0)31 312 65 75
+            Tel +31 312 65 75
             <br></br>
-            ruefli@buerovatter.ch
+            <a href={`mailto:ruefli@buerovatter.ch`}>ruefli@buerovatter.ch</a>
             <br></br> <br></br>
             <div className={`${styles.title_data_protection}`}>Allgemein</div>
             Gestützt auf Artikel 13 der Schweizerischen Bundesverfassung und die

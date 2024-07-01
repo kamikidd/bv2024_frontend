@@ -46,6 +46,16 @@
     font-weight: 400;
 }
 
+.tel_info {}
+
+a:link.tel_info {
+    color: black;
+}
+
+a:link:hover.tel_info {
+    color: #C00000;
+}
+
 .text_underline {
     color: #C00000;
     text-decoration: underline;

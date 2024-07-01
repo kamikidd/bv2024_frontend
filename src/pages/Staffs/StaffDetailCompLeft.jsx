@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
 import Spinner from "../Others/Spinner";
 import { useNavigate } from "react-router-dom";
-
+import symbol_backto from "../../assets/imgs/symbols/arrow-left.svg";
 import unknownstaff_pic from "../../assets/imgs/staffs/unknown.png";
 const StaffDetailCompLeft = ({ staff }) => {
   const navigate = useNavigate();
@@ -62,8 +62,19 @@ const StaffDetailCompLeft = ({ staff }) => {
           </div>
         </div>
 
-        <div className={`text_color ${styles.back_btn}`}>
-          <Link to="/Mitarbeitende">Zurück zur Übersicht</Link>
+        <div className={`${styles.back_btn_container}`}>
+          <Link to="/Mitarbeitende">
+            <button className={`${styles.back_btn}`}>
+              <img
+                src={symbol_backto}
+                alt="Zurück zur Übersicht"
+                height="28px"
+              ></img>
+              <span className={`${styles.back_btn_text}`}>
+                Zurück zur Übersicht
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
       <br />

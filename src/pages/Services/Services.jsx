@@ -34,12 +34,12 @@ const Services = () => {
   return (
     <div>
       <Container className="categoryTitle">DIENSTLEISTUNGEN</Container>
-      <Container>
+      <Container className={`${styles.service_page}`}>
         <Tab.Container
           defaultActiveKey={state ? state : services.data[0].title.rendered}
         >
           <Row>
-            <Col xl={4}>
+            <Col lg={4}>
               <Nav variant="pills" className="flex-column">
                 {services.data.map((service) => (
                   <Nav.Item key={service.id}>
@@ -50,7 +50,7 @@ const Services = () => {
                 ))}
               </Nav>
             </Col>
-            <Col xl={8}>
+            <Col lg={8}>
               <Tab.Content>
                 {services.data.map((service) => (
                   <Tab.Pane eventKey={service.title.rendered} key={service.id}>
@@ -65,14 +65,14 @@ const Services = () => {
             </Col>
           </Row>
           <Row className={`${styles.service_paragraph_spacing}`}>
-            <Col xl={4}>
+            <Col lg={4}>
               <div
                 className={`${styles.service_projects_list_title}  ${styles.service_paragraph_spacing}`}
               >
                 Ausgewählte Projekte
               </div>
             </Col>
-            <Col xl={8}>
+            <Col lg={8}>
               <Tab.Content>
                 {services.data.map((service) => (
                   <Tab.Pane key={service.id} eventKey={service.title.rendered}>

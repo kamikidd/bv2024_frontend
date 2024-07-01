@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import { Link, useLocation } from "react-router-dom";
 import DownloadPDF from "./DownloadPDF";
 import styles from "./projects.module.css";
+import symbol_backto from "../../assets/imgs/symbols/arrow-left.svg";
 
 const ProjectDetail = () => {
   const location = useLocation();
@@ -116,9 +117,17 @@ const ProjectDetail = () => {
             ) : null}
           </Col>
           <Col xl={4}>
-            <div className={`${styles.back_btn_projectdetail} text_color`}>
+            {/* <div className={`${styles.back_btn_projectdetail} text_color`}>
               <Link to="/Projekte">Alle Projekte anzeigen</Link>
-            </div>
+            </div> */}
+            <Link to="/Projekte">
+              <button className={`${styles.back_to_project_btn}`}>
+                <img src={symbol_backto} alt="refresh page" height="24px"></img>
+                <span className={`${styles.back_to_project_btn_text}`}>
+                  Alle Projekte anzeigen
+                </span>
+              </button>
+            </Link>
           </Col>
         </Row>
       </Container>

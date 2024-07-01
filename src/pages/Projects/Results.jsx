@@ -3,13 +3,12 @@ import styles from "./projects.module.css";
 import { useState, useEffect } from "react";
 import PaginationComp from "./PaginationComp";
 
-const Results = ({ projects, istlaufend, filterApplied }) => {
+const Results = ({ projects, istlaufend, projectStatus, filterApplied }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const postsPerPage = 10;
   const currentPosts = projects.slice(
     currentPage * postsPerPage - postsPerPage,
-    currentPage * postsPerPage
+    currentPage * postsPerPage,
   );
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage);
@@ -22,7 +21,11 @@ const Results = ({ projects, istlaufend, filterApplied }) => {
   }, [filterApplied]);
 
   if (projects.length == 0) {
-    return "No Project Is Found";
+    return (
+      <div className={styles.no_project_msg}>
+        Kein {projectStatus == "laufend" ? "laufendes" : ""} Projekt gefunden.
+      </div>
+    );
   }
   return (
     <div>

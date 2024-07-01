@@ -6,13 +6,13 @@ import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
 import DOMPurify from "dompurify";
 import Spinner from "../Others/Spinner";
-import symbol_goto from "../../assets/imgs/symbols/arrow-right.png";
+import symbol_goto from "../../assets/imgs/symbols/arrow-right.svg";
 import styles from "./home.module.css";
 const Home = () => {
   const navigate = useNavigate();
 
   const services = useQuery(["services", "dienstleistungen", ""], fetchData);
-
+  //28911 is id of post
   const landing_intro = useQuery(
     ["landingIntro", "pages/28911", ""],
     fetchData,
@@ -40,12 +40,23 @@ const Home = () => {
         <NewsComp></NewsComp>
       </Container>
 
-      <Container>
-        <Link to="/Projekte/laufend" className={`${styles.current_projects}`}>
-          <span>
-            Laufende Projekte
-            <img src={symbol_goto} alt="Laufende Projekte" height="24px"></img>
-          </span>
+      <Container className="text-end">
+        {/* <span className={`${styles.current_projects}`}>
+          <Link to="/Projekte/laufend">
+            <span className={`${styles.laufend_project_btn_text}`}>
+              Laufende Projekte
+            </span>
+            <img src={symbol_goto} alt="Laufende Projekte" height="28px"></img>
+          </Link>
+        </span> */}
+
+        <Link to="/Projekte/laufend">
+          <button className={`${styles.laufend_project_btn}`}>
+            <span className={`${styles.laufend_project_btn_text}`}>
+              Laufende Projekte
+            </span>
+            <img src={symbol_goto} alt="Laufende Projekte" height="28px"></img>
+          </button>
         </Link>
       </Container>
     </div>

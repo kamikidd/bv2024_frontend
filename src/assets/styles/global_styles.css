@@ -182,7 +182,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
     border: #fff;
     max-width: 350px;
     width: 100%;
@@ -191,6 +191,7 @@ body {
     text-align: center;
     color: #000000;
     justify-content: center;
+    text-transform: capitalize;
     line-height: 30px;
     border-radius: 0;
     transition-property: background-color;
@@ -229,7 +230,7 @@ input#titleName {
     font-family: 'Karla', sans-serif;
     font-weight: 400;
     color: #525151;
-    width: 85%;
+    width: 83%;
 }
 
 input#titleName:focus {

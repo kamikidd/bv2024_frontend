@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import { deUmlaut } from "../utils/helpers";
-import symbol_arrowright from "../assets/imgs/symbols/arrow-right.png";
+import symbol_arrowright from "../assets/imgs/symbols/arrow-right.svg";
 import styles from "./selectedprojectlist.module.css";
 const SelectedProjectList = (prop) => {
   const title = deUmlaut(prop.detail.title.rendered);
@@ -16,10 +16,8 @@ const SelectedProjectList = (prop) => {
             state={prop.detail}
             to={`/Projekte/Projekt/${title}`}
           >
-            <div
-              className={`d-flex justify-content-between ${styles.selected_projects_list}`}
-            >
-              <ul>
+            <div className={`d-flex justify-content-between`}>
+              <ul className="mb-0">
                 <li className={`${styles.text_break}`}>
                   {prop.detail.title.rendered} ({prop.detail.acf.Jahr})
                 </li>

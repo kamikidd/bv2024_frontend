@@ -51,7 +51,7 @@ const TitlePictureComp = ({ page }) => {
       }}
     >
       <div className={`${styles.caption}`}>
-        <div>{msg}</div>
+        <div className=" fluid container p-0 ">{msg}</div>
       </div>
     </div>
   );

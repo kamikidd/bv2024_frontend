@@ -17,6 +17,8 @@ import styles from "./projects.module.css";
 import Spinner from "../Others/Spinner";
 import SelectComp from "./SelectComp";
 import SearchInputComp from "./SearchInputComp";
+import undo from "../../assets/imgs/symbols/undo.svg";
+
 const Projects = () => {
   const param = useParams();
   const navigate = useNavigate();
@@ -148,21 +150,23 @@ const Projects = () => {
               <span className={styles.text}>
                 {result.length == projects.data.length
                   ? "Alle Projekte"
-                  : `${result.length} Projekte gefunden.`}
+                  : `${result.length ? `${result.length} ${param.id == "laufend" ? `${result.length > 1 ? "laufende Projekte gefunden." : "laufendes Projekt gefunden."}` : `${result.length > 1 ? " Projekte gefunden." : " Projekt gefunden."}`} ` : ""}`}
               </span>
               <button
-                className={`${styles.resetBtn} 
+                className={`${styles.reset_btn} 
                   ${result.length == projects.data.length ? "" : styles.show}
                 `}
                 onClick={refresh}
               >
-                Filter zurücksetzen
+                <span className={`${styles.reset_btn_text}`}>Filter zurücksetzen</span>
+                <img src={undo} alt="refresh page" height="24px"></img>
               </button>
             </div>
             <hr className={styles.hr} />
             <Results
               projects={result}
               istlaufend={laufendId}
+              projectStatus={param.id}
               filterApplied={isFiltered}
             ></Results>
           </Col>

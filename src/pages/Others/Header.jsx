@@ -23,7 +23,7 @@ const Header = () => {
         expand="lg"
         className="fixed-top bg-white navbar-light flex-nowrap"
       >
-        <Container className="align-items-end">
+        <Container className="align-items-end p-0">
           <Navbar.Brand id="logo_nav_container">
             <Link to="/" className="navbar-brand">
               <img
@@ -56,7 +56,7 @@ const Header = () => {
               <Offcanvas.Title id="offcanvasNavbar-expand-lg"></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body className="justify-content-end mb-2">
-              <Nav className="navbar_column nav-item">            
+              <Nav className="navbar_column nav-item">
                 <NavLink
                   reloaddocument="true"
                   className="nav-link"

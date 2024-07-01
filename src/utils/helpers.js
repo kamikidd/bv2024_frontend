@@ -1,4 +1,3 @@
-
 export function projectIdFetching(src, name) {
   let id = src.filter((s) => {
     return s.name == name;
@@ -36,6 +35,13 @@ export function getistLaufendId(src, name) {
     return null;
   }
 }
+export function formatDate(d) {
+  const new_date = d.split("-");
+  const day = new_date[2];
+  const month = new_date[1];
+  const year = new_date[0];
+  return [day, month, year].join("/");
+}
 export function filteredData(
   topics,
   services,
@@ -43,7 +49,7 @@ export function filteredData(
   projects,
   selected_service,
   selected_topic,
-  titleName
+  titleName,
 ) {
   let filteredProjects = projects;
   // Filtering Input Items
@@ -103,4 +109,3 @@ export function deUmlaut(value) {
   value = value.replace(/ß/g, "ss");
   return value;
 }
-

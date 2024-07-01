@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import laufendpic from "../../assets/imgs/symbols/laufend.png";
 import fertigpic from "../../assets/imgs/symbols/finished.png";
-import arrowrightpic from "../../assets/imgs/symbols/arrow-right.png";
+import arrowrightpic from "../../assets/imgs/symbols/arrow-right.svg";
 import { Link } from "react-router-dom";
 import { deUmlaut } from "../../utils/helpers";
 import styles from "./projects.module.css";

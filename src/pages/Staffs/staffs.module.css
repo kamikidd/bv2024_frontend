@@ -7,7 +7,6 @@
     font-weight: 400;
     text-align: left;
     hyphens: auto;
-
 }
 
 /*"staff_row" keep for gutter-x */
@@ -34,8 +33,9 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     max-width: 350px;
     width: 100%;
-    height: 880px;
+    min-height: 880px;
     padding-bottom: 20px;
+    position: relative;
 }
 
 .staff_name {
@@ -98,13 +98,28 @@ div.staff_info_position_lower {
     text-decoration: underline;
 }
 
+.back_btn_container {
+    padding-left: 5px;
+    position: absolute;
+    bottom: 20px;
+}
+
 .back_btn {
+    border: 2px solid transparent;
+    background-color: white;
+}
+
+.back_btn_text {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 24px;
     font-weight: 600;
-    text-decoration: underline;
-    line-height: 88px;
-    padding-left: 26px;
+    color: #C00000;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.back_btn:hover {
+    border-bottom: 2px solid #C00000;
 }
 
 

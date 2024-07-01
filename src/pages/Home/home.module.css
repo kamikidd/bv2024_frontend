@@ -6,14 +6,23 @@
     text-align: left;
 }
 
-.current_projects {
+.laufend_project_btn {
+    border: 2px solid transparent;
+    background-color: white;
+}
+
+.laufend_project_btn:hover {
+    border-bottom: 2px solid #C00000;
+}
+
+.laufend_project_btn_text {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 24px;
     font-weight: 600;
-    display: flex;
-    justify-content: end;
-    margin-bottom: 40px;
     color: #C00000;
+    vertical-align: middle;
+    padding-right: 5px;
+    margin-bottom: 40px;
 }
 
 /* .link_to_current_projects {

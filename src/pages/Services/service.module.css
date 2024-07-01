@@ -9,6 +9,9 @@
     font-weight: 400;
 }
 
+.service_page {
+    /* margin-top: 20px; */
+}
 
 .service_btn:active,
 .service_btn :focus {
@@ -46,10 +49,6 @@
 @media (min-width: 320px) and (max-width: 1199.98px) {
     .service_paragraph_spacing {
         margin-top: 20px;
-    }
-
-    .service_content {
-        margin-top: 40px;
     }
 
 }

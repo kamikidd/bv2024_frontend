@@ -4,14 +4,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useQuery } from "@tanstack/react-query";
 import fetchData from "../../utils/fetchData";
+import Spinner from "../Others/Spinner";
 import { Link, useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
-import Spinner from "../Others/Spinner";
 import { deUmlaut } from "../../utils/helpers";
 import styles from "./staffs.module.css";
 const Staffs = () => {
   const navigate = useNavigate();
   const staffs = useQuery(["staffs", "mitarbeitende", ""], fetchData);
+  //28919 is id of post
   const staff_intro = useQuery(["landingIntro", "pages/28919", ""], fetchData);
 
   if (staffs.isLoading || staff_intro.isLoading) {
@@ -73,15 +74,12 @@ const Staffs = () => {
                   </Link>
                 </Col>
                 <Col lg={8} md={6} className={`my-auto ${styles.about} `}>
-                  <p className={`${styles.funder_info}`}>
-                    Adrian Vatter ist Gründer des Büros und seit 2008 Präsident
-                    des Verwaltungsrates. Er ist seit 2009 Inhaber des
-                    Lehrstuhls für Schweizer Politik am Institut für
-                    Politikwissenschaft der Universität Bern. Seit 1994 hat er
-                    für diverse Stellen der Bundesverwaltung sowie für kantonale
-                    und kommunale Behörden zahlreiche Forschungs- und
-                    Beratungsmandate wahrgenommen.
-                  </p>
+                  <p
+                    className={`${styles.funder_info}`}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(staff.content.rendered),
+                    }}
+                  ></p>
                 </Col>
               </Row>
             ),

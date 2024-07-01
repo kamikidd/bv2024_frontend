@@ -2,9 +2,28 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import location from "../../assets/imgs/map.png";
-import { Link } from "react-router-dom";
 import styles from "./contact.module.css";
+import { useQuery } from "@tanstack/react-query";
+import fetchData from "../../utils/fetchData";
+import Spinner from "../Others/Spinner";
+import { useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
+
 const Contact = () => {
+  const navigate = useNavigate();
+  //29060 is id of post
+  const addr_intro = useQuery(
+    ["Wegbeschreibung", "pages/29060", ""],
+    fetchData,
+  );
+  //29064 is id of media
+  const media = useQuery(["staff_pic", `media`, 29064], fetchData);
+  if (media.isLoading || addr_intro.isLoading) {
+    return <Spinner></Spinner>;
+  }
+  if (media.isError || addr_intro.isError) {
+    navigate("/NotMatch404");
+  }
   return (
     <div>
       <Container className="categoryTitle">KONTAKT</Container>
@@ -24,10 +43,17 @@ const Contact = () => {
                 </div>
                 <br></br>
                 <div className={`${styles.contact_info}`}>
-                  <a href={`tel:+41 31 312 65 75`}>+41 31 312 65 75</a>
+                  <a
+                    href={`tel:+41 31 312 65 75`}
+                    className={` ${styles.tel_info} `}
+                  >
+                    +41 31 312 65 75
+                  </a>
                 </div>
                 <br></br>
-                <div className={`${styles.contact_info}`}>
+                <div
+                  className={`${styles.contact_info} ${styles.text_underline}`}
+                >
                   <a href={`mailto:info@buerovatter.ch`}>info@buerovatter.ch</a>
                 </div>
                 <br></br>
@@ -42,9 +68,12 @@ const Contact = () => {
                     </a>
                   </Col>
                   <Col>
-                    <Link to="" className={`${styles.addr_info}`}>
+                    <a
+                      href={media.data.source_url}
+                      className={`${styles.addr_info}`}
+                    >
                       Printable Map
-                    </Link>
+                    </a>
                   </Col>
                 </Row>
               </div>
@@ -56,18 +85,14 @@ const Contact = () => {
         </Row>
 
         <div className={`${styles.contact_addr_title}`}>
-          {/* TODO: get text below from restapi*/}
           Wegbeschreibung ab Bahnhof Bern
         </div>
-        <p className={`${styles.contact_addr_detail}`}>
-          {/* TODO: get text below from restapi*/}
-          Bus Nr. 12 Richtung Zentrum Paul Klee benützen, bis Haltestelle
-          Nydegg. <br></br>
-          In Fahrtrichtung einige Meter weiter gehen, vor der Nydeggbrücke
-          rechts via Nydeggtreppe in die Gerberngasse, dort rechts. Die Nr. 27
-          befindet sich ca. 300 m weiter auf der linken Seite. <br></br>
-          Der Eingang befindet sich an der Frontseite, gegenüber dem Brunnen.
-        </p>
+        <p
+          className={`${styles.contact_addr_detail}`}
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(addr_intro.data.content.rendered),
+          }}
+        ></p>
         <br />
       </Container>
     </div>
