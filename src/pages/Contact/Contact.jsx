@@ -58,24 +58,24 @@ const Contact = () => {
                 </div>
                 <br></br>
                 <br></br>
-                <Row>
-                  <Col>
+                <div className={`${styles.map_text_container}`}>
+                  <span>
                     <a
                       href="https://maps.app.goo.gl/pK5fmbpc5qx59JkW9"
                       className={`${styles.addr_info}`}
                     >
                       Google Maps
                     </a>
-                  </Col>
-                  <Col>
+                  </span>
+                  <span>
                     <a
                       href={media.data.source_url}
                       className={`${styles.addr_info}`}
                     >
                       Printable Map
                     </a>
-                  </Col>
-                </Row>
+                  </span>
+                </div>
               </div>
             </div>
           </Col>

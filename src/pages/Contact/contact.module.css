@@ -19,6 +19,11 @@
 
 }
 
+.map_text_container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .contact_addr_detail {
     font-family: 'Karla', sans-serif;
     font-size: 20px;
@@ -36,7 +41,7 @@
 .map {
     /* margin-right: 10vw; */
     margin-bottom: 40px;
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
 }
 
