@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import styles from "./projects.module.css";
+import { useSearchParams } from "react-router-dom";
 
-const SearchInputComp = ({ onChange, isClear, isCleared }) => {
+const SearchInputComp = ({ onChange, url }) => {
   const [titleName, setTitleName] = useState("");
   const [hideClearBtn, setHideClearBtn] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams("");
+
   const handleKeyDown = (event) => {
     if (event.target.value.length <= 1) {
       if (event.key == "Backspace") {
+        setSearchParams((searchParams) => {
+          searchParams.delete("Titel");
+          return searchParams;
+        });
         setHideClearBtn(true);
         setTitleName("");
         onChange("");
@@ -14,21 +21,27 @@ const SearchInputComp = ({ onChange, isClear, isCleared }) => {
     }
   };
   const handleInputChange = (event) => {
-    setTitleName(event.target.value);
     onChange(event.target.value);
-    if (event.target.value == "") {
+    setSearchParams((searchParams) => {
+      searchParams.delete("Titel");
+      searchParams.append("Titel", event.target.value); // <-- append key-value pair
+      return searchParams;
+    });
+  };
+
+  useEffect(() => {
+    const data = url.get("Titel");
+    if (!data) {
       setHideClearBtn(true);
+      setTitleName("");
+      onChange("");
     } else {
+      setTitleName(data);
+      onChange(data);
       setHideClearBtn(false);
     }
-  };
-  useEffect(() => {
-    if (isClear) {
-      setTitleName("");
-      setHideClearBtn(true);
-      isCleared(false);
-    }
-  }, [isClear, isCleared]);
+  }, [url]);
+
   return (
     <div className="p-0">
       <label htmlFor="titleName" className={`${styles.search_label}`}>
@@ -53,6 +66,10 @@ const SearchInputComp = ({ onChange, isClear, isCleared }) => {
               setHideClearBtn(true);
               setTitleName("");
               onChange("");
+              setSearchParams((searchParams) => {
+                searchParams.delete("Titel");
+                return searchParams;
+              });
             }}
           >
             ×

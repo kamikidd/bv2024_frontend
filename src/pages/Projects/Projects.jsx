@@ -23,7 +23,9 @@ const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   // ----------Input filter----------
   const [titleName, setTitleName] = useState("");
-  const [selectedService, setSelectedService] = useState(undefined);
+  const [selectedService, setSelectedService] = useState(
+    param.id == "laufend" ? undefined : searchParams.get("Dienstleistungen"),
+  );
   const [selectedTopic, setSelectedTopic] = useState(
     param.id == "laufend" ? undefined : searchParams.get("Themen"),
   );
@@ -31,56 +33,23 @@ const Projects = () => {
   const [filterLaufend, setFilterLaufend] = useState(
     param.id == "laufend" ? true : false,
   );
-  const [isClear, setIsClear] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
 
   //----------Topic Select filter----------
   function handleSelectedTopic(data) {
     setSelectedTopic(data);
-    setSearchParams((searchParams) => {
-      if (data == undefined) {
-        searchParams.delete("Themen");
-      } else {
-        searchParams.append("Themen", data); // <-- append key-value pair
-      }
-      return searchParams;
-    });
-
     setIsFiltered(true);
   }
   function handleSelectedService(data) {
     setSelectedService(data);
-
-    setSearchParams((searchParams) => {
-      if (data == undefined) {
-        searchParams.delete("Dienstleistungen");
-      } else {
-        searchParams.append("Dienstleistungen", data); // <-- append key-value pair
-      }
-      return searchParams;
-    });
     setIsFiltered(true);
-  }
-  function handleClearStatus() {
-    setIsClear(false);
-    setIsFiltered(false);
   }
   function setTitle(data) {
     setTitleName(data);
-    setSearchParams((searchParams) => {
-      if (data == "") {
-        searchParams.delete("Titel");
-      } else {
-        searchParams.delete("Titel");
-        searchParams.append("Titel", data); // <-- append key-value pair
-      }
-      return searchParams;
-    });
     setIsFiltered(data);
   }
 
   function refresh() {
-    setIsClear(true);
     setFilterLaufend(false);
     setSelectedTopic(undefined);
     setSelectedService(undefined);
@@ -142,8 +111,7 @@ const Projects = () => {
             <Row className={`${styles.left_side}`}>
               <SearchInputComp
                 onChange={setTitle}
-                isClear={isClear}
-                isCleared={handleClearStatus}
+                url={searchParams}
               ></SearchInputComp>
               <br />
               <div className={`${styles.filter_label}`}>
@@ -153,8 +121,8 @@ const Projects = () => {
                   value={selectedTopic ?? "Alle Themen"}
                   options={topics.data}
                   onChange={handleSelectedTopic}
-                  isClear={isClear}
-                  isCleared={handleClearStatus}
+                  type={"Themen"}
+                  url={searchParams}
                 ></SelectComp>
               </div>
               <div className={`${styles.filter_label}`}>
@@ -164,8 +132,8 @@ const Projects = () => {
                   value={selectedService ?? "Alle Dienstleistungen"}
                   options={services.data}
                   onChange={handleSelectedService}
-                  isClear={isClear}
-                  isCleared={handleClearStatus}
+                  type={"Dienstleistungen"}
+                  url={searchParams}
                 ></SelectComp>
               </div>
             </Row>

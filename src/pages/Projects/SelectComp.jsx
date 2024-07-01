@@ -1,22 +1,23 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { useEffect, useState } from "react";
 import styles from "./select.module.css";
+import { useSearchParams } from "react-router-dom";
+
 const SelectComp = ({
   isPreSelected,
   value,
   onChange,
   options,
-  isClear,
-  isCleared,
+  type,
+  url,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [searchParams, setSearchParams] = useSearchParams("");
   const [showClearButton, setShowClearButton] = useState(
-    isPreSelected == undefined ? false : true
+    isPreSelected == undefined ? false : true,
   );
-
   const [defaultStyle, setDefaultStyle] = useState(
-    isPreSelected == undefined ? true : false
+    isPreSelected == undefined ? true : false,
   );
   const [showArrow, setShowArrow] = useState(isPreSelected ? false : true);
   const [arrowIsDown, setArrowIsDown] = useState(true);
@@ -27,7 +28,6 @@ const SelectComp = ({
     setDefaultStyle(true);
     setShowArrow(true);
     setArrowIsDown(true);
-    isCleared(false);
   }
 
   function selectOption(option) {
@@ -43,8 +43,17 @@ const SelectComp = ({
   }, [isOpen]);
 
   useEffect(() => {
-    if (isClear) clearOptions();
-  }, [isClear]);
+    const data = url.get(type);
+    if (!data) {
+      clearOptions();
+    } else {
+      selectOption(data);
+      setShowClearButton(true);
+      setDefaultStyle(false);
+      setIsOpen(false);
+      setShowArrow(false);
+    }
+  }, [url]);
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
@@ -68,6 +77,10 @@ const SelectComp = ({
         onClick={(e) => {
           e.stopPropagation();
           clearOptions();
+          setSearchParams((searchParams) => {
+            searchParams.delete(type);
+            return searchParams;
+          });
         }}
         className={`${styles.clearbtn}  ${showClearButton ? styles.show : ""}`}
       >
@@ -89,6 +102,15 @@ const SelectComp = ({
               setDefaultStyle(false);
               setIsOpen(false);
               setShowArrow(false);
+              setSearchParams((searchParams) => {
+                if (option.title.rendered == undefined) {
+                  searchParams.delete(type);
+                } else {
+                  searchParams.delete(type);
+                  searchParams.append(type, option.title.rendered); // <-- append key-value pair
+                }
+                return searchParams;
+              });
             }}
             onMouseEnter={() => setHighlightedIndex(index)}
             key={option.id}
