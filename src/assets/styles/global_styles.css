@@ -81,6 +81,11 @@ body {
     padding-right: 0px;
 }
 
+.header_nav_content {
+    padding-right: 5px;
+    padding-left: 0px;
+}
+
 #logo_nav_container {
     padding-left: 0px;
     padding-right: 0px;

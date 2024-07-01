@@ -23,7 +23,7 @@ const Header = () => {
         expand="lg"
         className="fixed-top bg-white navbar-light flex-nowrap"
       >
-        <Container className="align-items-end p-0">
+        <Container className="align-items-end header_nav_content">
           <Navbar.Brand id="logo_nav_container">
             <Link to="/" className="navbar-brand">
               <img
