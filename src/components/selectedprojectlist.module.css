@@ -15,6 +15,10 @@
     color: #C00000;
 }
 
+.list_width {
+    width: 85%;
+}
+
 /* .selected_projects_list {
     min-height: 40px;
 } */
