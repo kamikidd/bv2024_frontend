@@ -17,9 +17,7 @@ const SelectedProjectList = (prop) => {
             state={prop.detail}
             to={`/Projekte/Projekt/${prop.detail.slug}`}
           >
-            <div
-              className={`d-flex justify-content-between ${styles.list_width}`}
-            >
+            <div className={`d-flex justify-content-between`}>
               <ul className={`mb-0 ${styles.list_width}`}>
                 <li
                   className={`${styles.text_break}`}
