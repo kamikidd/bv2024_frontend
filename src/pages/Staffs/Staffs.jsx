@@ -21,6 +21,7 @@ const Staffs = () => {
   if (staffs.isError || staff_intro.isError) {
     navigate("/NotMatch404");
   }
+
   return (
     <div>
       <Container className="categoryTitle">ÜBER UNS</Container>

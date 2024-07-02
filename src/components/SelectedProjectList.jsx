@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { deUmlaut } from "../utils/helpers";
 import symbol_arrowright from "../assets/imgs/symbols/arrow-right.svg";
 import styles from "./selectedprojectlist.module.css";
+import DOMPurify from "dompurify";
+
 const SelectedProjectList = (prop) => {
   const title = deUmlaut(prop.detail.title.rendered);
-
   return (
     <div>
       <Container className={`${styles.project_list}`}>
@@ -14,13 +15,18 @@ const SelectedProjectList = (prop) => {
           <Link
             className={`${styles.selected_projects_list_link}`}
             state={prop.detail}
-            to={`/Projekte/Projekt/${title}`}
+            to={`/Projekte/Projekt/${prop.detail.slug}`}
           >
             <div className={`d-flex justify-content-between`}>
               <ul className="mb-0">
-                <li className={`${styles.text_break}`}>
-                  {prop.detail.title.rendered} ({prop.detail.acf.Jahr})
-                </li>
+                <li
+                  className={`${styles.text_break}`}
+                  dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(
+                      `${prop.detail.title.rendered} (${prop.detail.acf.Jahr})`,
+                    ),
+                  }}
+                ></li>
               </ul>
               <img
                 src={symbol_arrowright}

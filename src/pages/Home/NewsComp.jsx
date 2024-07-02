@@ -20,7 +20,12 @@ const NewsComp = () => {
     <div id="landing_news">
       {news.data.map((artikel) => (
         <div key={artikel.id}>
-          <div className={`${styles.news_title}`}>{artikel.title.rendered}</div>
+          <div
+            className={`${styles.news_title}`}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(artikel.title.rendered),
+            }}
+          ></div>
           <div className={`${styles.news_date}`}>
             {formatDate(artikel.date.slice(0, 10))}
           </div>

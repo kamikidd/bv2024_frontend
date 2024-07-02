@@ -41,15 +41,6 @@ const Home = () => {
       </Container>
 
       <Container className="text-end">
-        {/* <span className={`${styles.current_projects}`}>
-          <Link to="/Projekte/laufend">
-            <span className={`${styles.laufend_project_btn_text}`}>
-              Laufende Projekte
-            </span>
-            <img src={symbol_goto} alt="Laufende Projekte" height="28px"></img>
-          </Link>
-        </span> */}
-
         <Link to="/Projekte/laufend">
           <button className={`${styles.laufend_project_btn}`}>
             <span className={`${styles.laufend_project_btn_text}`}>

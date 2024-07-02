@@ -7,6 +7,7 @@ import arrowrightpic from "../../assets/imgs/symbols/arrow-right.svg";
 import { Link } from "react-router-dom";
 import { deUmlaut } from "../../utils/helpers";
 import styles from "./projects.module.css";
+import DOMPurify from "dompurify";
 
 const Project = (prop) => {
   const title = deUmlaut(prop.title);
@@ -36,11 +37,16 @@ const Project = (prop) => {
 
               <Link
                 className={`${styles.project_list_btn}`}
-                to={`/Projekte/Projekt/${title}`}
+                to={`/Projekte/Projekt/${prop.detail.slug}`}
                 state={prop.detail}
               >
                 <div className="d-flex justify-content-between">
-                  <div className={`${styles.list_title}`}>{prop.title}</div>
+                  <div
+                    className={`${styles.list_title}`}
+                    dangerouslySetInnerHTML={{
+                      __html: DOMPurify.sanitize(prop.title),
+                    }}
+                  ></div>
 
                   <img
                     className={`${styles.project_list_arrow}`}
