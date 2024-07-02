@@ -1,7 +1,10 @@
 .spinner_container {
     width: auto;
     margin: auto;
+    margin-top: 40px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .html_spinner {

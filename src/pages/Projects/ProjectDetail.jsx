@@ -5,11 +5,24 @@ import { Link, useLocation } from "react-router-dom";
 import DownloadPDF from "./DownloadPDF";
 import styles from "./projects.module.css";
 import symbol_backto from "../../assets/imgs/symbols/arrow-left.svg";
+import DOMPurify from "dompurify";
+import { useQuery } from "@tanstack/react-query";
+import fetchData from "../../utils/fetchData";
+import Spinner from "../Others/Spinner";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
-  const location = useLocation();
-  const state = location.state;
-  const detail = state.acf;
+  const param = useParams();
+  const navigate = useNavigate();
+  const project = useQuery(["project", `projekte/${param.id}`, ""], fetchData);
+  if (project.isLoading) {
+    return <Spinner></Spinner>;
+  }
+
+  if (project.isError) {
+    navigate("/NotMatch404");
+  }
+  const detail = project.data.acf;
   const partners = detail.kooperationspartner.split("\r\n");
   const methods = detail.vorgehenmethoden.split("\r\n");
   return (
@@ -20,9 +33,12 @@ const ProjectDetail = () => {
         <Row className={`${styles.reverse_row}`}>
           <Col xl={8}>
             <Row>
-              <Col className={`${styles.project_detail_title}`}>
-                {state.title.rendered}
-              </Col>
+              <Col
+                className={`${styles.project_detail_title}`}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(project.data.title.rendered),
+                }}
+              ></Col>
             </Row>
             {detail.kooperationspartner ? (
               <Row>
@@ -117,9 +133,6 @@ const ProjectDetail = () => {
             ) : null}
           </Col>
           <Col xl={4}>
-            {/* <div className={`${styles.back_btn_projectdetail} text_color`}>
-              <Link to="/Projekte">Alle Projekte anzeigen</Link>
-            </div> */}
             <Link to="/Projekte">
               <button className={`${styles.back_to_project_btn}`}>
                 <img src={symbol_backto} alt="refresh page" height="24px"></img>

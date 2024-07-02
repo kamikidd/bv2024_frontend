@@ -37,7 +37,7 @@ const Project = (prop) => {
 
               <Link
                 className={`${styles.project_list_btn}`}
-                to={`/Projekte/Projekt/${prop.detail.slug}`}
+                to={`/Projekte/Projekt/${prop.detail.slug}/${prop.detail.id}`}
                 state={prop.detail}
               >
                 <div className="d-flex justify-content-between">
