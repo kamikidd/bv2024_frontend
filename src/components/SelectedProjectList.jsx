@@ -15,7 +15,7 @@ const SelectedProjectList = (prop) => {
           <Link
             className={`${styles.selected_projects_list_link}`}
             state={prop.detail}
-            to={`/Projekte/Projekt/${prop.detail.slug}`}
+            to={`/Projekte/Projekt/${prop.detail.slug}/${prop.detail.id}`}
           >
             <div className={`d-flex justify-content-between`}>
               <ul className={`mb-0 ${styles.list_width}`}>
