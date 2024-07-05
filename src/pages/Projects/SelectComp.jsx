@@ -3,14 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./select.module.css";
 import { useSearchParams } from "react-router-dom";
 
-const SelectComp = ({
-  isPreSelected,
-  value,
-  onChange,
-  options,
-  type,
-  url,
-}) => {
+const SelectComp = ({ isPreSelected, value, onChange, options, type, url }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams("");
   const [showClearButton, setShowClearButton] = useState(
@@ -94,7 +87,7 @@ const SelectComp = ({
       <ul className={`${styles.options}  ${isOpen ? styles.show : ""}`}>
         {options.map((option, index) => (
           // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-          <ul
+          <li
             onClick={(e) => {
               e.stopPropagation();
               selectOption(option.title.rendered);
@@ -119,7 +112,7 @@ const SelectComp = ({
             } ${index == highlightedIndex ? styles.highlighted : ""}`}
           >
             {option.title.rendered}
-          </ul>
+          </li>
         ))}
       </ul>
     </div>

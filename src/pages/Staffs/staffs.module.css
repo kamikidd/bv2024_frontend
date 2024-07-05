@@ -74,11 +74,13 @@ ul.staff_info_position_higher {
     font-size: 20px;
     font-weight: 400;
     padding-left: 0px;
+    list-style-type: none;
 }
 
 .info_line {
     padding-left: 0px;
     text-align: center;
+
 }
 
 div.staff_info_position_lower {

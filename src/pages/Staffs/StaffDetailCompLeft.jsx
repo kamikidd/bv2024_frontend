@@ -30,9 +30,9 @@ const StaffDetailCompLeft = ({ staff }) => {
           <div className={`${styles.staff_info}`}>{staff.acf.position}</div>
           <ul className={`${styles.staff_info_position_higher}`}>
             {information.map((line, index) => (
-              <ul className={`${styles.info_line}`} key={index}>
+              <li className={`${styles.info_line}`} key={index}>
                 {line}
-              </ul>
+              </li>
             ))}
           </ul>
           <div className={`${styles.staff_detail_left_bottom_element}`}>

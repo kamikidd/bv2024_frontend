@@ -48,7 +48,7 @@ const ProjectDetail = () => {
                 <Col className={`${styles.detail_right}`} xl={9}>
                   {partners.map((line, index) => (
                     <ul className={`${styles.partner}`} key={index}>
-                      {line}
+                      <li>{line}</li>
                     </ul>
                   ))}
                 </Col>
@@ -98,7 +98,7 @@ const ProjectDetail = () => {
                 <Col className={`${styles.detail_right}`} xl={9}>
                   {methods.map((line, index) => (
                     <ul className={`${styles.method}`} key={index}>
-                      -{line}
+                      <li>-{line}</li>
                     </ul>
                   ))}
                 </Col>

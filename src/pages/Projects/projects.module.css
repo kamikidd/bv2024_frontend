@@ -200,11 +200,13 @@
 .partner {
     padding-left: 0;
     margin-bottom: 0;
+    list-style-type: none;
 }
 
 .method {
     padding-left: 0;
     margin-bottom: 0;
+    list-style-type: none;
 }
 
 div.project_detail_title.col {

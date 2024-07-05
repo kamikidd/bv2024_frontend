@@ -117,7 +117,7 @@
     z-index: 100;
     transition: max-height 0.4s;
     overflow: hidden;
-
+    list-style-type: none;
     /* display: none; */
     /* max-height: 30em; */
     /* overflow-y: hidden; */
@@ -137,7 +137,7 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    letter-spacing: -0.9px;
+    letter-spacing: -1px;
     color: #000000;
 
 
